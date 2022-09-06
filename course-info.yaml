@@ -1,0 +1,9 @@
+type: marketplace
+title: Reinforcement Learning Maze Solver
+language: English
+summary: |
+  This is an introductory RL course.
+programming_language: Python
+environment: unittest
+content:
+- lesson1
