@@ -23,14 +23,13 @@ def run():
     # dimension2 = 5
     dimension1 = int(input('Enter x dimension: '))
     dimension2 = int(input('Enter y dimension: '))
+    start_x = int(input('Enter x coordinate of the maze start: '))
+    start_y = int(input('Enter y coordinate of the maze start: '))
     gamma = float(
         input('Enter the gamma value (0, 1] (aka the discount factor, influences the importance of future rewards): '))
     lrn_rate = float(input(
         'Enter the learning rate (0, 1] (larger values increase the influence of both current rewards and future rewards (explore) at the expense of past rewards (exploit)): '))
     max_epochs = 1000
-
-    start_x = int(input('Enter x coordinate of the start: '))
-    start_y = int(input('Enter y coordinate of the start: '))
 
     # Create and draw the Maze
     margin = 80
