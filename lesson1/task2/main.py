@@ -3,7 +3,7 @@ from maze import Maze
 from convert import Feasibility, find_reachable_neighbors
 from PIL import Image
 from draw import draw_image
-from learn import train, walk
+from learn import Agent
 import pandas as pd
 
 
@@ -45,6 +45,9 @@ def run():
     feasibility = Feasibility(maze)
     feasibility.get_neighbors(maze)
 
+    # Number of states:
+    n_states = feasibility.cells
+
     # Set start and goal:
     # start = 0
     start = feasibility.numbered_grid[start_x, start_y]
@@ -56,30 +59,31 @@ def run():
     previous = feasibility.numbered_grid[prev_index[0], prev_index[1]][0]
 
     # Rewards:
-    R = np.copy(feasibility.F)
-    R = np.where(R == 1, -0.1, R)
-
+    R_matrix = np.copy(feasibility.F_matrix)
+    R_matrix = np.where(R_matrix == 1, -0.1, R_matrix)
     # Set the highest reward for reaching the end of the maze:
-    R[previous, goal] = 1000.0
+    R_matrix[previous, goal] = 1000.0
 
     # Initiate the Q-matrix:
-    Q = np.zeros(shape=[feasibility.F.shape[0], feasibility.F.shape[0]], dtype=np.float32)  # Quality
+    Q_matrix = np.zeros(shape=[feasibility.F_matrix.shape[0], feasibility.F_matrix.shape[0]], dtype=np.float32)  # Quality
+    # Initialize the agent:
+    agent = Agent(Q_matrix, gamma, lrn_rate)
 
     print("Analyzing maze with RL Q-learning")
     print("The F matrix:\n")
-    my_print(feasibility.F)
+    my_print(feasibility.F_matrix)
 
-    # Number of states:
-    ns = feasibility.cells
-    train(feasibility.F, R, Q, gamma, lrn_rate, goal, ns, max_epochs)
+    # Train the model:
+    agent.train(feasibility.F_matrix, R_matrix, max_epochs, n_states, goal)
+    # train(feasibility.F_matrix, R_matrix, Q_matrix, gamma, lrn_rate, goal, n_states, max_epochs)
     print("Done ")
 
     print("The Q matrix is: \n ")
-    my_print(Q)
+    my_print(agent.Q)
 
     print(f"Using Q to go from 0 to goal ({goal})")
 
-    walk(start, goal, Q)
+    agent.walk(start, goal)
 
 
 if __name__ == "__main__":

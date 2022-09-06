@@ -17,7 +17,7 @@ def find_reachable_neighbors(maze_, cell_):
 class Feasibility:
     def __init__(self, maze_):
         self.cells = maze_.maze_grid.shape[0] * maze_.maze_grid.shape[1]
-        self.F = np.zeros(shape=[self.cells, self.cells], dtype=int)
+        self.F_matrix = np.zeros(shape=[self.cells, self.cells], dtype=int)
         self.numbered_grid = np.arange(self.cells).reshape((maze_.maze_grid.shape[0], maze_.maze_grid.shape[1]))
         self.indices_grid = np.indices((maze_.maze_grid.shape[0], maze_.maze_grid.shape[1]))
 
@@ -30,7 +30,7 @@ class Feasibility:
                 for neighbor_tuple in neighbors:
                     neighbor = neighbor_tuple[1]
                     neighbor_number_in_grid = self.numbered_grid[neighbor.x, neighbor.y]
-                    if self.F[cell_number, neighbor_number_in_grid] == 0:
-                        self.F[cell_number, neighbor_number_in_grid] = 1
+                    if self.F_matrix[cell_number, neighbor_number_in_grid] == 0:
+                        self.F_matrix[cell_number, neighbor_number_in_grid] = 1
                         # print(f"F[{cell_number}, {neighbor_number_in_grid}] = 1")
                         # print(f"R[{cell_number}, {neighbor_number_in_grid}] = -0.1")
