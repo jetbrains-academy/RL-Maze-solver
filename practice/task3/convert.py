@@ -28,6 +28,7 @@ class Feasibility:
             neighbors = find_reachable_neighbors(maze_, maze_.maze_grid[ind1, ind2])
             if len(neighbors) > 0:
                 for neighbor in neighbors:
+                    # neighbor = neighbor_tuple[1]
                     neighbor_number_in_grid = self.numbered_grid[neighbor.x, neighbor.y]
                     if self.F_matrix[cell_number, neighbor_number_in_grid] == 0:
                         self.F_matrix[cell_number, neighbor_number_in_grid] = 1
