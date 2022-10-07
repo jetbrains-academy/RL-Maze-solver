@@ -53,7 +53,7 @@ def run():
     goal = feasibility.numbered_grid[maze.end[0], maze.end[1]]
 
     # Find the penultimate cell to set the highest reward for reaching the end of the maze:
-    previous = find_reachable_neighbors(maze, maze.maze_grid[maze.end[0]][maze.end[1]])[0][1]
+    previous = find_reachable_neighbors(maze, maze.maze_grid[maze.end[0]][maze.end[1]])[0]
     prev_index = np.where(maze.maze_grid == previous)
     previous = feasibility.numbered_grid[prev_index[0], prev_index[1]][0]
 

@@ -10,7 +10,7 @@ def find_reachable_neighbors(maze_, cell_):
             neighbor = maze_.cell_at(neighbor_x, neighbor_y)
             # Check if the neighbor does not have the wall between it and the curr. cell
             if not neighbor.walls[Cell.wall_pairs[direction]]:
-                neighbors.append((direction, neighbor))
+                neighbors.append(neighbor)
     return neighbors
 
 
@@ -19,7 +19,6 @@ class Feasibility:
         self.cells = maze_.maze_grid.shape[0] * maze_.maze_grid.shape[1]
         self.F_matrix = np.zeros(shape=[self.cells, self.cells], dtype=int)
         self.numbered_grid = np.arange(self.cells).reshape((maze_.maze_grid.shape[0], maze_.maze_grid.shape[1]))
-        self.indices_grid = np.indices((maze_.maze_grid.shape[0], maze_.maze_grid.shape[1]))
 
     def get_neighbors(self, maze_):
         for cell_number in np.nditer(self.numbered_grid):
@@ -27,8 +26,7 @@ class Feasibility:
             ind2 = np.where(self.numbered_grid == cell_number)[1][0]
             neighbors = find_reachable_neighbors(maze_, maze_.maze_grid[ind1, ind2])
             if len(neighbors) > 0:
-                for neighbor_tuple in neighbors:
-                    neighbor = neighbor_tuple[1]
+                for neighbor in neighbors:
                     neighbor_number_in_grid = self.numbered_grid[neighbor.x, neighbor.y]
                     if self.F_matrix[cell_number, neighbor_number_in_grid] == 0:
                         self.F_matrix[cell_number, neighbor_number_in_grid] = 1
