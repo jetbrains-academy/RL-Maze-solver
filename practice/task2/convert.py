@@ -29,6 +29,7 @@ class Feasibility:
             if len(neighbors) > 0:
                 for neighbor in neighbors:
                     neighbor_number_in_grid = self.numbered_grid[neighbor.x, neighbor.y]
+                    # Possibly unneeded if clause?
                     if self.F_matrix[cell_number, neighbor_number_in_grid] == 0:
                         self.F_matrix[cell_number, neighbor_number_in_grid] = 1
 

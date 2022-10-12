@@ -1,48 +1,23 @@
+## Get reachable neighbors
 
-This is a task description file.
-Its content will be displayed to a learner
-in the **Task Description** window.
+To populate our Feasibility matrix with 0 and 1, we will now need to
+complete the method `get_neighbors` of the class `Feasibility` in convert.py.
+The method should accept a Maze `object` and, by iteratively checking each of
+its cells for reachable neighbors (call the function we implemented in the previous step), 
+replace `0`s in the `F_matrix` with `1`s on those intersections where it is possible to go from one cell to another.
+Keep the `0` where there's a wall between the two cells.
 
-It supports both Markdown and HTML.
-To toggle the format, you can rename **task.md**
-to **task.html**, or vice versa.
-The default task description format can be changed
-in **Preferences | Tools | Education**,
-but this will not affect any existing task description files.
+This method should be called in the `__init__` of the class.
 
-The following features are available in
-**task.md/task.html** which are specific to the EduTools plugin:
-
-- Hints can be added anywhere in the task text.
-Type "hint" and press Tab.
-Hints should be added to an empty line in the task text.
-In hints you can use both HTML and Markdown.
 <div class="hint">
 
-Text of your hint
-
+You can use the `numbered_grid` and a Numpy method `nditer()` to iterate over the numbers of cells in the grid,
+get their indices and access each particular cell in the `maze_maze_grid` using those indices to check if it has 
+reachable neighbors.
 </div>
 
-- You may need to refer your learners to a particular lesson,
-task, or file. To achieve this, you can use the in-course links.
-Specify the path using the `[link_text](course://lesson1/task1/file1)` format.
+<div class="hint">
 
-- You can insert shortcuts in the task description.
-While **task.html/task.md** is open, right-click anywhere
-on the **Editor** tab and choose the **Insert shortcut** option
-from the context menu.
-For example: &shortcut:FileStructurePopup;.
-
-- Insert the &percnt;`IDE_NAME`&percnt; macro,
-which will be replaced by the actual IDE name.
-For example, **%IDE_NAME%**.
-
-- Insert PSI elements, by using links like
-`[element_description](psi_element://link.to.element)`.
-To get such a link, right-click the class or method
-and select **Copy Reference**.
-Then press &shortcut:EditorPaste; to insert the link where appropriate.
-For example, a [link to the "contains" method](psi_element://java.lang.String#contains).
-
-- You can add link to file using **full path** like this:
-  `[file_link](file://lesson1/task1/file.txt)`.
+For each reachable neighbor of each cell, you can access its number in the grid by its indices (`Cell.x`, `Cell.y`) and
+then place a `1` in the `F_matrix` at the intersection of the number of the current cell and of its current neighbor.
+</div>
