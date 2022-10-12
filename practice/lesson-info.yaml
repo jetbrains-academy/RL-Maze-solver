@@ -1,7 +1,7 @@
 type: framework
 custom_name: Practice
 content:
-- task1
-- task2
-- task3
+- Feasibility matrix
+- Get reachable neighbors
+- Fill F-matrix
 - task4
