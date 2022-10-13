@@ -4,4 +4,5 @@ content:
 - Feasibility matrix
 - Get reachable neighbors
 - Fill F-matrix
-- task4
+- Get possible next states
+- task5
