@@ -1,5 +1,3 @@
-## Get possible next states
-
 To train our agent, we will need to fill the Q matrix with some values (elaborate here).
 we will be using the train method of the Agent class for that.
 The train method will need a couple of helper functions.
