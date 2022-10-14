@@ -1,9 +1,13 @@
 # Feasibility matrix
 
 We have some predefined code that builds a Maze 
-which is an object of class Maze. Maze.maze_grid is a numpy array of Cell objects. 
+which is an object of class Maze. Maze.maze_grid is a numpy array of Cell objects.
+
 > If you are struggling to understand this code, we encourage you to take the AMAzing course, which will
 guide you through the steps of building such a maze.
+
+The goal is to get our Agent from the START (which can be any cell) to the END of the maze in the fewest number moves.
+The Agent can move left, right, up, or down but not diagonally.
 
 For our solver algorithm to work, we will need to have all the cells in the 
 maze numbered the way it is shown on the image below. 
