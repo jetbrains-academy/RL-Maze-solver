@@ -15,7 +15,7 @@ def test_get_poss_next_states(state, F, n_states):
 
 
 class TestCase(unittest.TestCase):
-    def test_feasibility_neighbors(self):
+    def test_next_states(self):
         dimension1 = 3
         dimension2 = 3
         start_x = 0

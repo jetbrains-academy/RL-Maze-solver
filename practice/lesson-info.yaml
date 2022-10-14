@@ -5,4 +5,5 @@ content:
 - Get reachable neighbors
 - Fill F-matrix
 - Get possible next states
-- task5
+- Get random next state
+- task6
