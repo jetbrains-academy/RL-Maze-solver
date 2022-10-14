@@ -1,5 +1,3 @@
-## Fill the F-matrix
-
 To populate our Feasibility matrix with 0 and 1, we will now need to
 complete the method `get_neighbors` of the class `Feasibility` in convert.py.
 The method should accept a Maze `object` and, by iteratively checking each of

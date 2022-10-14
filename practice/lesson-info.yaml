@@ -3,7 +3,7 @@ custom_name: Practice
 content:
 - Feasibility matrix
 - Get reachable neighbors
-- Fill F-matrix
+- Fill the F-matrix
 - Get possible next states
 - Get random next state
 - task6
