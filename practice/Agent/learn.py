@@ -25,7 +25,7 @@ class Agent:
         self.R = np.copy(feasibility.F_matrix)
         self.start = feasibility.numbered_grid[start_x, start_y]
         self.goal = feasibility.numbered_grid[maze.end[0], maze.end[1]]
-        self.set_rewards(maze, feasibility)
+        # self.set_rewards(maze, feasibility)
         self.n_states = feasibility.cells
         self.gamma = gamma
         self.lrn_rate = lrn_rate

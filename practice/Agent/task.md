@@ -15,7 +15,12 @@ This largest value, $maxQ$, will be used to update the Q matrix.
 
 First we will need to define the Agent class. complete the `__init__` method of the class
 so that it has the following attributes:
-- gamma (`gamma`) - the discount factor,
-- learning rate (`lrn_rate`),
-- `Q` - the Q matrix
-- `path` - a list that at the end of the training process will contain the optimal path - a sequence of cell numbers.
+- `Q` - the Q matrix. It should be of the same shape as the F-matrix and initially contain zeroes.
+- `R` - the reward matrix. It should initially be a copy of the F-matrix.
+- `start` - the number of the start cell. You can get it from the `numbered_grid` by the start coordinates.
+- `goal` - the number of the goal cell. You can get it from the `numbered_grid` by the coordinates of the maze `end`.
+- `n_states` - the number of possible states in the maze, which is equal to the number of cells.
+- Gamma (`gamma`) - the discount factor.
+- Learning rate (`lrn_rate`).
+- `path` - a list (initially empty) that at the end of the training process will contain the optimal path - a sequence of cell numbers.
+
