@@ -4,9 +4,9 @@ but its row indices are the "from" cells and the column indices are the "to" cel
 
 The Q-learning algorithm updates the equation below, which is based on the Bellman equation.
 You don't need to fully understand the Bellman equation to use Q-learning, but if you're interested,
-the Wikipedia article is a good place to start.
+the [Wikipedia article](https://en.wikipedia.org/wiki/Bellman_equation) is a good place to start.
 
-$Q(s_t,a_t)=[(1 - \alpha)*Q(s_t,a_t)]+[\alpha * (r_t + \gamma * maxQ(s_{t+1},a) \forall a)]$
+$$Q(s_t,a_t)=[(1 - \alpha)*Q(s_t,a_t)]+[\alpha * (r_t + \gamma * maxQ(s_{t+1},a) \forall a)]$$
 
 where $Q(s_t,a_t)$ is the Q value of going from the current state to the next; 
 $\alpha$ is learning rate; $r_t$ is the reward for the transition; $\gamma$ is the discount factor, which influences the importance of future rewards.

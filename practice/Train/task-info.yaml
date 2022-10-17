@@ -9,7 +9,7 @@ files:
 - name: draw.py
   visible: true
 - name: learn.py
-  visible: false
+  visible: true
 - name: main.py
   visible: true
 - name: maze.py
