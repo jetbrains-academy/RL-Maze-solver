@@ -1,0 +1,12 @@
+type: framework
+custom_name: Practice
+content:
+- Feasibility matrix
+- Get reachable neighbors
+- Fill the F-matrix
+- Get possible next states
+- Get random next state
+- Agent
+- Rewards
+- Train
+- task8

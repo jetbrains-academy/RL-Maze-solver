@@ -31,59 +31,35 @@ def run():
         'Enter the learning rate (0, 1] (larger values increase the influence of both current rewards and future rewards (explore) at the expense of past rewards (exploit)): '))
     max_epochs = 1000
 
-    # Create and draw the Maze
-    margin = 80
-    cell_side = 100
+    # Create the Maze
     maze = Maze(dimension1, dimension2, [start_x, start_y])
-
-    width, height = (margin + cell_side * dim for dim in maze.maze_grid.shape)
-    # img = Image.new("RGB", (width, height), (255, 255, 255))
-    # draw_image(img, "maze.png", maze.maze_grid)
 
     # Get the Feasibility Matrix
     feasibility = Feasibility(maze)
-    feasibility.get_neighbors(maze)
 
-    # Number of states:
-    n_states = feasibility.cells
-
-    # Set start and goal:
-    # start = 0
-    start = feasibility.numbered_grid[start_x, start_y]
-    goal = feasibility.numbered_grid[maze.end[0], maze.end[1]]
-
-    # Find the penultimate cell to set the highest reward for reaching the end of the maze:
-    previous = find_reachable_neighbors(maze, maze.maze_grid[maze.end[0]][maze.end[1]])[0]
-    prev_index = np.where(maze.maze_grid == previous)
-    previous = feasibility.numbered_grid[prev_index[0], prev_index[1]][0]
-
-    # Rewards:
-    R_matrix = np.copy(feasibility.F_matrix)
-    R_matrix = np.where(R_matrix == 1, -0.1, R_matrix)
-    # Set the highest reward for reaching the end of the maze:
-    R_matrix[previous, goal] = 1000.0
-
-    # Initiate the Q-matrix:
-    Q_matrix = np.zeros(shape=[feasibility.F_matrix.shape[0], feasibility.F_matrix.shape[0]], dtype=np.float32)  # Quality
     # Initialize the agent:
-    agent = Agent(Q_matrix, gamma, lrn_rate)
+    agent = Agent(feasibility, gamma, lrn_rate, maze, start_x, start_y)
 
     print("Analyzing maze with RL Q-learning")
     print("The F matrix:\n")
     my_print(feasibility.F_matrix)
 
     # Train the model:
-    agent.train(feasibility.F_matrix, R_matrix, max_epochs, n_states, goal)
+    agent.train(feasibility.F_matrix, max_epochs)
     # train(feasibility.F_matrix, R_matrix, Q_matrix, gamma, lrn_rate, goal, n_states, max_epochs)
     print("Done ")
 
     print("The Q matrix is: \n ")
     my_print(agent.Q)
 
-    print(f"Using Q to go from 0 to goal ({goal})")
+    print(f"Using Q to go from 0 to goal ({agent.goal})")
 
-    agent.walk(start, goal)
+    agent.walk()
 
+    # Draw the visualization
+    margin = 80
+    cell_side = 100
+    width, height = (margin + cell_side * dim for dim in maze.maze_grid.shape)
     make_movie(width, height, maze, feasibility, agent.path)
 
 

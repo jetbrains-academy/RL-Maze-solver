@@ -1,8 +1,11 @@
-import numpy as np
+import unittest
+from maze import Maze
 from cell import Cell
+from convert import Feasibility, find_reachable_neighbors
+import numpy as np
 
 
-def find_reachable_neighbors(maze_, cell_):
+def test_find_reachable_neighbors(maze_, cell_):
     neighbors = []
     for direction, (dx, dy) in maze_.delta.items():
         neighbor_x, neighbor_y = cell_.x + dx, cell_.y + dy
@@ -14,21 +17,39 @@ def find_reachable_neighbors(maze_, cell_):
     return neighbors
 
 
-class Feasibility:
+class TestFeasibility:
     def __init__(self, maze_):
         self.cells = maze_.maze_grid.shape[0] * maze_.maze_grid.shape[1]
         self.F_matrix = np.zeros(shape=[self.cells, self.cells], dtype=int)
         self.numbered_grid = np.arange(self.cells).reshape((maze_.maze_grid.shape[0], maze_.maze_grid.shape[1]))
+        self.get_neighbors(maze_)
 
     def get_neighbors(self, maze_):
         for cell_number in np.nditer(self.numbered_grid):
             ind1 = np.where(self.numbered_grid == cell_number)[0][0]
             ind2 = np.where(self.numbered_grid == cell_number)[1][0]
-            neighbors = find_reachable_neighbors(maze_, maze_.maze_grid[ind1, ind2])
+            neighbors = test_find_reachable_neighbors(maze_, maze_.maze_grid[ind1, ind2])
             if len(neighbors) > 0:
                 for neighbor in neighbors:
+                    # neighbor = neighbor_tuple[1]
                     neighbor_number_in_grid = self.numbered_grid[neighbor.x, neighbor.y]
                     if self.F_matrix[cell_number, neighbor_number_in_grid] == 0:
                         self.F_matrix[cell_number, neighbor_number_in_grid] = 1
-                        # print(f"F[{cell_number}, {neighbor_number_in_grid}] = 1")
-                        # print(f"R[{cell_number}, {neighbor_number_in_grid}] = -0.1")
+
+
+class TestCase(unittest.TestCase):
+
+    def test_feasibility_neighbors(self):
+        dimension1 = 3
+        dimension2 = 3
+        start_x = 0
+        start_y = 0
+
+        maze = Maze(dimension1, dimension2, [start_x, start_y])
+
+        test_feasibility = TestFeasibility(maze)
+        actual_feasibility = Feasibility(maze)
+        np.testing.assert_array_equal(test_feasibility.F_matrix, actual_feasibility.F_matrix, err_msg="Your F_matrix is wrong")
+
+
+

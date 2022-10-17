@@ -1,0 +1,20 @@
+type: edu
+files:
+- name: __init__.py
+  visible: false
+- name: cell.py
+  visible: true
+- name: convert.py
+  visible: true
+- name: draw.py
+  visible: true
+- name: learn.py
+  visible: true
+- name: main.py
+  visible: true
+- name: maze.py
+  visible: true
+- name: tests/test_task.py
+  visible: false
+- name: tests/__init__.py
+  visible: false
