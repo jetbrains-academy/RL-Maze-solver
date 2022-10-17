@@ -7,5 +7,6 @@ content:
 - Get possible next states
 - Get random next state
 - Agent
+- Rewards
 - Train
 - task8

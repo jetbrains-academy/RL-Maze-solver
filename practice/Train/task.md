@@ -20,3 +20,5 @@ As an example, suppose at some point during training, you're at cell 8 and the n
 state is selected as cell 5. The next-next states are 8 and 2. Because moving to cell 2 
 has a reward of +1000.0, the value of Q[8][5] will be increased, making that path more attractive 
 than the path from cell 8 to cell 7. 
+
+<img src="maze_example.png" width="300">
