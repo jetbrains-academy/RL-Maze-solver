@@ -19,6 +19,6 @@ files:
 - name: tests/__init__.py
   visible: false
 - name: maze_example.png
-  visible: true
+  visible: false
 - name: tests/test_learn.py
   visible: false
