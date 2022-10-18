@@ -1,7 +1,5 @@
-import numpy as np
 from maze import Maze
-from convert import Feasibility, find_reachable_neighbors
-from PIL import Image
+from convert import Feasibility
 from draw import make_movie
 from learn import Agent
 import pandas as pd
@@ -14,8 +12,7 @@ def my_print(Q):
     print(df.to_string())
 
 
-def run():
-    np.random.seed(1)
+if __name__ == "__main__":
 
     # gamma = 0.9
     # lrn_rate = 0.5
@@ -56,13 +53,5 @@ def run():
 
     agent.walk()
 
-    # Draw the visualization
-    margin = 80
-    cell_side = 100
-    width, height = (margin + cell_side * dim for dim in maze.maze_grid.shape)
-    make_movie(width, height, maze, feasibility, agent.path)
-
-
-if __name__ == "__main__":
-    run()
-
+    # Create the dynamic visualization
+    make_movie(maze, feasibility, agent.path)
