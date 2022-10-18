@@ -7,7 +7,7 @@ Remember that in the Q matrix row indices are "from" cells and column indices ar
 Starting from the row that corresponds to the starting cell, you need to find the next cell to move in to 
 by finding the largest Q values in the given row. Repeat this until you reach the goal. The method assumes the goal state is reachable.
 
-If you like, it could also print this sequence so that it looks something like this:
+It should also print this sequence so that it looks something like:
 
 `0->1->4->3->6->7->8->5->2->done`
 
