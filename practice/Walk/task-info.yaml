@@ -14,11 +14,11 @@ files:
   visible: true
 - name: maze.py
   visible: true
+- name: maze_example.png
+  visible: true
 - name: tests/test_task.py
   visible: false
 - name: tests/__init__.py
   visible: false
-- name: maze_example.png
-  visible: true
 - name: tests/test_learn.py
   visible: false

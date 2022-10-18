@@ -19,7 +19,7 @@ def get_rnd_next_state(state, F, n_states):
     return next_state
 
 
-class Agent:
+class TestAgent:
     def __init__(self, feasibility, gamma, lrn_rate, maze, start_x, start_y):
         self.Q = np.zeros(shape=[feasibility.F_matrix.shape[0], feasibility.F_matrix.shape[0]], dtype=np.float32)
         self.R = np.copy(feasibility.F_matrix)
@@ -38,7 +38,7 @@ class Agent:
         previous = feasibility.numbered_grid[prev_index[0], prev_index[1]][0]
         self.R = np.where(self.R == 1, -0.1, self.R)
         # Set the highest reward for reaching the end of the maze:
-        self.R[previous, self.goal] = 10.0
+        self.R[previous, self.goal] = 1000.0
 
     def train(self, F, max_epochs):
         # Compute the Q matrix
@@ -58,7 +58,7 @@ class Agent:
                 # Bellman's equation: Q = [(1-a) * Q]  +  [a * (rt + (g * maxQ))]
                 # Update the Q matrix
                 self.Q[curr_state][next_state] = ((1 - self.lrn_rate) * self.Q[curr_state][next_state]) + (
-                            self.lrn_rate * (self.R[curr_state][next_state] + (self.gamma * max_Q)))
+                        self.lrn_rate * (self.R[curr_state][next_state] + (self.gamma * max_Q)))
 
                 curr_state = next_state
                 if curr_state == self.goal:
