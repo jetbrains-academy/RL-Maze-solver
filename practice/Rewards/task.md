@@ -31,3 +31,11 @@ and then set the value `R[number_of_penultimate_cell][number_of_goal_cell]` to `
 You could use the function `find_reachable_neighbors` from the module convert.py to find the penultimate cell.
 Our maze building algorithm works in such a way that there will always be only one cell reachable from the goal.
 </div>
+
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>

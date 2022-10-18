@@ -20,3 +20,5 @@ files:
   visible: false
 - name: maze_example.png
   visible: true
+- name: tests/test_learn.py
+  visible: false
