@@ -1,5 +1,7 @@
 type: edu
 files:
+- name: main.py
+  visible: true
 - name: __init__.py
   visible: false
 - name: cell.py
@@ -10,8 +12,6 @@ files:
   visible: true
 - name: learn.py
   visible: true
-- name: main.py
-  visible: true
 - name: maze.py
   visible: true
 - name: tests/test_task.py
@@ -20,5 +20,3 @@ files:
   visible: false
 - name: runConfigurations/Visualization_main.run.xml
   visible: false
-- name: maze_path.gif
-  visible: true
