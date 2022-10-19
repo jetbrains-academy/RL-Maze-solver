@@ -1,4 +1,4 @@
-Add the following lines to the `main` block in main.py
+Add the following lines to the `main` block in main.py (instead of whatever is in there at the moment)
 and run the code in order to see the path of
 the agent moving through the labyrinth.
 
@@ -38,6 +38,8 @@ print(f"Using Q to go from 0 to goal ({agent.goal})")
 
 agent.walk()
 ```
+
+You will also need to import the `Agent` class.
 
 As you might remember from the equation we discussed earlier,
 Q-learning has two parameters, the learning rate ($\alpha$) and gamma ($\gamma$). Larger values 

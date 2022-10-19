@@ -6,3 +6,5 @@ a browser to view it or go to the next task :)
 ```python
   make_movie(maze, feasibility, agent.path)
 ```
+
+You will also need to import this function from draw.py.
