@@ -1,4 +1,4 @@
-type: edu
+type: theory
 files:
 - name: main.py
   visible: true
@@ -14,9 +14,7 @@ files:
   visible: true
 - name: maze.py
   visible: true
-- name: tests/test_task.py
+- name: feasibility.png
   visible: false
-- name: tests/__init__.py
-  visible: false
-- name: runConfigurations/Learning_rate_main.run.xml
+- name: maze_example.png
   visible: false
