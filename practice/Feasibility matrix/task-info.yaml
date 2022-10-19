@@ -1,10 +1,10 @@
 type: edu
 files:
+- name: convert.py
+  visible: true
 - name: __init__.py
   visible: false
 - name: cell.py
-  visible: true
-- name: convert.py
   visible: true
 - name: draw.py
   visible: true
@@ -19,6 +19,6 @@ files:
 - name: tests/__init__.py
   visible: false
 - name: maze_example.png
-  visible: true
+  visible: false
 - name: feasibility.png
-  visible: true
+  visible: false

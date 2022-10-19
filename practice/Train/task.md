@@ -22,6 +22,9 @@ The assumption here
 is that the goal is reachable, so in some problems you need to apply
 a maximum loop control variable (`max_epochs`).
 
+### Task
+Implement the algorithm described above in the method `train` of class `Agent`.
+
 <style>
 img {
   display: block;

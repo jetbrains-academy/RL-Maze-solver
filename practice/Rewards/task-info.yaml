@@ -1,5 +1,7 @@
 type: edu
 files:
+- name: learn.py
+  visible: true
 - name: __init__.py
   visible: false
 - name: cell.py
@@ -7,8 +9,6 @@ files:
 - name: convert.py
   visible: true
 - name: draw.py
-  visible: true
-- name: learn.py
   visible: true
 - name: main.py
   visible: true
@@ -18,5 +18,7 @@ files:
   visible: false
 - name: tests/__init__.py
   visible: false
+- name: feasibility.png
+  visible: false
 - name: maze_example.png
-  visible: true
+  visible: false

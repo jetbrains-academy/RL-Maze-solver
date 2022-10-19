@@ -2,7 +2,7 @@ type: framework
 custom_name: Practice
 content:
 - Feasibility matrix
-- Get reachable neighbors
+- Find reachable neighbors
 - Fill the F-matrix
 - Get possible next states
 - Get random next state
@@ -10,4 +10,7 @@ content:
 - Rewards
 - Train
 - Walk
-- task8
+- Learning Rate and Discount Factor
+- Visualization
+- GIF
+is_template_based: false

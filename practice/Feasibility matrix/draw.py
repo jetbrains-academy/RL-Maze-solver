@@ -4,6 +4,8 @@ from convert import Feasibility
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
+
+# Some predefined values for the visualization
 margin = 80
 cell_side = 100
 line_thickness = 10
@@ -64,9 +66,11 @@ def draw_agent(cell, image, color="blue"):
     image.ellipse((x - cell_side / 3, y - cell_side / 3, x + cell_side / 3, y + cell_side / 3), fill=color)
 
 
-def make_movie(width, height, maze, feasibility, path, filename="maze_path.gif"):
+def make_movie(maze, feasibility, path, filename="maze_path.gif"):
     """Function for drawing a visualization of how the agent moves through the labyrinth."""
     images = []
+    width, height = (margin + cell_side * dim for dim in maze.maze_grid.shape)
+
     for position in path:
         # cell = np.where(feasibility.numbered_grid=path)
         ind1 = np.where(feasibility.numbered_grid == position)[0][0]
@@ -80,10 +84,12 @@ def make_movie(width, height, maze, feasibility, path, filename="maze_path.gif")
         images.append(im)
 
     images[0].save(filename, save_all=True, append_images=images[1:], optimize=False, duration=400, loop=0)
+    # images[0].save("../../images/maze_path.gif", save_all=True, append_images=images[1:], optimize=False, duration=400, loop=0)
 
 
-def draw_maze(width, height, maze, filename="maze.png"):
+def draw_maze(maze, filename="maze.png"):
     """Function for drawing a static image of the maze."""
+    width, height = (margin + cell_side * dim for dim in maze.maze_grid.shape)
     img = Image.new("RGB", (width, height), (255, 255, 255))
     cells = maze.maze_grid
     maze_img = ImageDraw.Draw(img)
@@ -91,33 +97,3 @@ def draw_maze(width, height, maze, filename="maze.png"):
     for cell in cells.flatten():
         draw_cell(cell, maze_img, method="not_grid")
     img.save(filename)
-
-
-if __name__ == '__main__':
-    # dimension1 = int(input('Enter x dimension: '))
-    # dimension2 = int(input('Enter y dimension: '))
-    # start_x = int(input('Enter x coordinate of the start: '))
-    # start_y = int(input('Enter y coordinate of the start: '))
-
-    dimension1 = 5
-    dimension2 = 5
-    start_x = 1
-    start_y = 1
-
-    # margin = 80
-    # cell_side = 100
-    # line_thickness = 10
-    # maze = Maze(dimension1, dimension2)
-    # maze = Maze(dimension1, dimension2, [start_x, start_y])
-    #
-    # width, height = (margin + cell_side * dim for dim in maze.maze_grid.shape)
-    # img = Image.new("RGB", (width, height), (255, 255, 255))
-    # draw_image(img, "maze.png", maze.maze_grid)
-
-    maze = Maze(dimension1, dimension2, [start_x, start_y])
-    width, height = (margin + cell_side * dim for dim in maze.maze_grid.shape)
-
-    feasibility = Feasibility(maze)
-    path = [6, 11, 10, 15, 16, 21, 20]
-
-    make_movie(width, height, maze, feasibility, path)

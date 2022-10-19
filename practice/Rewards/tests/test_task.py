@@ -17,6 +17,23 @@ def test_set_rewards(maze, feasibility):
 
 
 class TestCase(unittest.TestCase):
+    def test_0_forgot_to_call(self):
+        dimension1, dimension2 = (3, 3)
+        start_x, start_y = (0, 0)
+
+        maze = Maze(dimension1, dimension2, [start_x, start_y])
+
+        feasibility = Feasibility(maze)
+        gamma = 0.5
+        lrn_rate = 0.5
+        agent = Agent(feasibility, gamma, lrn_rate, maze, start_x, start_y)
+        # _, _, test_R = test_set_rewards(maze, feasibility)
+        test_ones = np.where(feasibility.F_matrix == 1)[0]
+        test_ones = test_ones.tolist()
+        actual_ones = np.where(agent.R == 1)[0]
+        actual_ones = actual_ones.tolist()
+        self.assertFalse(test_ones == actual_ones, msg="Maybe you forgot to call the implemented set_rewards method in the init.")
+
     def test_agent_R(self):
         dimension1, dimension2 = (3, 3)
         start_x, start_y = (0, 0)
@@ -39,4 +56,4 @@ class TestCase(unittest.TestCase):
         goal, previous, test_R = test_set_rewards(maze, feasibility)
         self.assertEqual(agent.R[previous, goal], test_R[previous, goal], msg="The reward for reaching the goal cell should be 1000.0")
         self.assertTrue(0 in agent.R and -0.1 in agent.R and 1000.0 in agent.R, msg="R matrix should contain values 0, -0.1 and 1000.0.")
-
+    #
