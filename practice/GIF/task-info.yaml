@@ -1,4 +1,4 @@
-type: output
+type: theory
 files:
 - name: __init__.py
   visible: false
@@ -14,7 +14,7 @@ files:
   visible: true
 - name: maze.py
   visible: true
-- name: tests/output.txt
+- name: feasibility.png
   visible: false
-- name: tests/input.txt
+- name: maze_example.png
   visible: false
