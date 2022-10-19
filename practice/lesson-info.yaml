@@ -1,9 +1,8 @@
 type: framework
 custom_name: Practice
-is_template_based: false
 content:
 - Feasibility matrix
-- Get reachable neighbors
+- Find reachable neighbors
 - Fill the F-matrix
 - Get possible next states
 - Get random next state
@@ -14,3 +13,4 @@ content:
 - Learning Rate and Discount Factor
 - Visualization
 - GIF
+is_template_based: false
