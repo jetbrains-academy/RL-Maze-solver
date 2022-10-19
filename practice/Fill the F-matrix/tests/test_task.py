@@ -38,8 +38,19 @@ class TestFeasibility:
 
 
 class TestCase(unittest.TestCase):
+    def test_0_forgot_to_call(self):
+        dimension1 = 3
+        dimension2 = 3
+        start_x = 0
+        start_y = 0
 
-    def test_feasibility_neighbors(self):
+        maze = Maze(dimension1, dimension2, [start_x, start_y])
+
+        actual_feasibility = Feasibility(maze)
+        all_zeroes = not np.any(actual_feasibility.F_matrix)
+        self.assertFalse(all_zeroes, msg="Maybe you forgot to call the implemented method in the init.")
+
+    def test_1_feasibility_neighbors(self):
         dimension1 = 3
         dimension2 = 3
         start_x = 0
@@ -49,7 +60,5 @@ class TestCase(unittest.TestCase):
 
         test_feasibility = TestFeasibility(maze)
         actual_feasibility = Feasibility(maze)
-        np.testing.assert_array_equal(test_feasibility.F_matrix, actual_feasibility.F_matrix, err_msg="Your F_matrix is wrong")
-
-
-
+        np.testing.assert_array_equal(test_feasibility.F_matrix, actual_feasibility.F_matrix,
+                                      err_msg="Your F_matrix is wrong")
