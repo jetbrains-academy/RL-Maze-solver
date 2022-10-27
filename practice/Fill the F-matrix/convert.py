@@ -9,7 +9,7 @@ def find_reachable_neighbors(maze_, cell_):
         if (0 <= neighbor_x < maze_.nx) and (0 <= neighbor_y < maze_.ny):
             neighbor = maze_.cell_at(neighbor_x, neighbor_y)
             # Check if the neighbor does not have the wall between it and the curr. cell
-            if not neighbor.walls[Cell.wall_pairs[direction]]:
+            if not cell_.walls[direction]:
                 neighbors.append(neighbor)
     return neighbors
 
@@ -28,8 +28,8 @@ class Feasibility:
             neighbors = find_reachable_neighbors(maze_, maze_.maze_grid[ind1, ind2])
             if len(neighbors) > 0:
                 for neighbor in neighbors:
-                    # neighbor = neighbor_tuple[1]
                     neighbor_number_in_grid = self.numbered_grid[neighbor.x, neighbor.y]
+                    # Possibly unneeded if clause?
                     if self.F_matrix[cell_number, neighbor_number_in_grid] == 0:
                         self.F_matrix[cell_number, neighbor_number_in_grid] = 1
 
