@@ -48,7 +48,8 @@ class TestCase(unittest.TestCase):
 
         actual_feasibility = Feasibility(maze)
         all_zeroes = not np.any(actual_feasibility.F_matrix)
-        self.assertFalse(all_zeroes, msg="Maybe you forgot to call the implemented method in the init.")
+        self.assertFalse(all_zeroes, msg="Maybe you forgot to call the implemented method in the init. The F_matrix "
+                                         "is all zeroes.")
 
     def test_1_feasibility_neighbors(self):
         dimension1 = 3
@@ -61,4 +62,4 @@ class TestCase(unittest.TestCase):
         test_feasibility = TestFeasibility(maze)
         actual_feasibility = Feasibility(maze)
         np.testing.assert_array_equal(test_feasibility.F_matrix, actual_feasibility.F_matrix,
-                                      err_msg="Your F_matrix is wrong")
+                                      err_msg="Your F_matrix is wrong.")
