@@ -9,7 +9,7 @@ def find_reachable_neighbors(maze_, cell_):
         if (0 <= neighbor_x < maze_.nx) and (0 <= neighbor_y < maze_.ny):
             neighbor = maze_.cell_at(neighbor_x, neighbor_y)
             # Check if the neighbor does not have the wall between it and the curr. cell
-            if not neighbor.walls[Cell.wall_pairs[direction]]:
+            if not cell_.walls[direction]:
                 neighbors.append(neighbor)
     return neighbors
 
