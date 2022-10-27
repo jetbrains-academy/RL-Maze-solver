@@ -16,7 +16,10 @@ class TestCase(unittest.TestCase):
         feasibility = Feasibility(maze)
 
         test_feasibility = np.zeros(shape=[dimension1 * dimension2, dimension1 * dimension2], dtype=int)
-        np.testing.assert_array_equal(feasibility.F_matrix, test_feasibility, err_msg="")
+        try:
+            np.testing.assert_array_equal(feasibility.F_matrix, test_feasibility, err_msg="Your F_matrix looks wrong.")
+        except AttributeError as e:
+            self.fail(msg=f"AttributeError was raised. {e}. Please make sure you defined all attributes with correct names.")
 
     def test_numbered_grid(self):
         dimension1 = 3
@@ -29,8 +32,10 @@ class TestCase(unittest.TestCase):
         feasibility = Feasibility(maze)
 
         test_numbered_grid = np.arange(dimension1 * dimension2).reshape((dimension1, dimension1))
-        np.testing.assert_array_equal(feasibility.numbered_grid, test_numbered_grid, err_msg="")
-
+        try:
+            np.testing.assert_array_equal(feasibility.numbered_grid, test_numbered_grid, err_msg="Your numbered_grid looks wrong.")
+        except AttributeError as e:
+            self.fail(msg=f"AttributeError was raised. {e}. Please make sure you defined all attributes with correct names.")
 
 
 
