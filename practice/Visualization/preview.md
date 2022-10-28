@@ -1,1 +1,0 @@
-![maze_path.gif not found](maze_path.gif)

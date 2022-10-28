@@ -22,5 +22,3 @@ files:
   visible: false
 - name: maze_example.png
   visible: false
-- name: preview.md
-  visible: false
