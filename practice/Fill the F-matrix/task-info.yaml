@@ -22,3 +22,5 @@ files:
   visible: false
 - name: maze_example.png
   visible: false
+- name: final_run.py
+  visible: false
