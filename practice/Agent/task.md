@@ -24,3 +24,4 @@ so that it has the following attributes:
 - Learning rate (`lrn_rate`).
 - `path` - a list (initially empty) that at the end of the training process will contain the optimal path - a sequence of cell numbers.
 
+Please make sure that the attributes you define have exactly the right names.
