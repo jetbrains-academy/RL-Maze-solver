@@ -83,7 +83,8 @@ def make_movie(maze, feasibility, path, filename="maze_path.gif"):
         draw_agent(cell, draw)
         images.append(im)
 
-    images[0].save(filename, save_all=True, append_images=images[1:], optimize=False, duration=400, loop=0)
+    # images[0].save(filename, save_all=True, append_images=images[1:], optimize=False, duration=400, loop=0)
+    images[0].save("maze_path.gif", save_all=True, append_images=images[1:], optimize=False, duration=400, loop=0)
 
 
 def draw_maze(maze, filename="maze.png"):

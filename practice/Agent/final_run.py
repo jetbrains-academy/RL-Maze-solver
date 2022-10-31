@@ -2,6 +2,7 @@ from maze import Maze
 from convert import Feasibility
 from learn import Agent
 import pandas as pd
+from draw import make_movie
 
 
 def my_print(Q):
@@ -20,8 +21,8 @@ if __name__ == "__main__":
                 break
             else:
                 print("Maze dimensions cannot be 0.")
-        except ValueError:
-            print("Dimensions must be integers.")
+        except Exception:
+            print("Dimensions must be integers. Please enter two numbers separated by a space.")
 
     while True:
         try:
@@ -31,8 +32,8 @@ if __name__ == "__main__":
                 break
             else:
                 print("Start coordinates should be inside the maze. Numbering is zero-based.")
-        except ValueError:
-            print("Start coordinates must be integers.")
+        except Exception:
+            print("Start coordinates must be integers. Please enter two numbers separated by a space.")
 
     while True:
         try:
@@ -80,4 +81,5 @@ if __name__ == "__main__":
     print(f"Using Q to go from 0 to goal ({agent.goal})")
 
     agent.walk()
+    make_movie(maze, feasibility, agent.path)
 
