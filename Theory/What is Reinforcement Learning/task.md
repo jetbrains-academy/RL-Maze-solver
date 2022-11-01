@@ -39,6 +39,10 @@ may need to endure many small penalties and keep going in order to get to the fi
 
 <img src="maze_path.gif" width="600">
 
+Reinforcement learning is particularly well-suited to problems that include a long-term versus short-term reward trade-off. 
+It has been applied successfully to various problems, including robot control, industry automation, 
+trading and finance, natural language processing, automated medical diagnosis, gaming, news recommendation and so on.
+
 
 <style>
 img {

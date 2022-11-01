@@ -1,6 +1,6 @@
 ## Key Definitions
 
-**Environment**: the entire maze. It is a simply set of cells with walls between some of them. We can also say an environment is a set of states (see further).
+**Environment**: the entire maze. It is a simply set of cells with walls between some of them. We can also say an environment is a set of states (see further). The environment is typically stated in the form of a [Markov decision process](https://en.wikipedia.org/wiki/Markov_decision_process) (MDP).
 
 **State**: a single element in the environment. In our case, a state is a cell. 
 

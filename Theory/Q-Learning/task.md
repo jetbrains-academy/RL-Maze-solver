@@ -1,48 +1,33 @@
+## Q-learning
 
-This is a task description file.
-Its content will be displayed to a learner
-in the **Task Description** window.
+Q-learning is a reinforcement learning algorithm to learn the value of an action in a particular state.
 
-It supports both Markdown and HTML.
-To toggle the format, you can rename **task.md**
-to **task.html**, or vice versa.
-The default task description format can be changed
-in **Preferences | Tools | Education**,
-but this will not affect any existing task description files.
+For any finite Markov decision process (FMDP), Q-learning finds an optimal policy in the sense of maximizing the expected value of the total reward over 
+any and all successive steps, starting from the current state. "Q" refers to the function that the algorithm computes – the expected rewards for an action taken in a given state.
+At least in the case of our maze, we can be sure that such function exists, although we do not know how to compute it efficiently.
 
-The following features are available in
-**task.md/task.html** which are specific to the EduTools plugin:
+After $\Delta t$ steps into the future the agent will decide some next step. The weight for this step is calculated as $\gamma ^{\Delta t}$, where $\gamma$  (the discount factor) is 
+a number between 0 and 1 $0\leq \gamma \leq 1$ and has the effect of valuing rewards received earlier higher than those received later (reflecting the value of a "good start"). 
+$\gamma$ may also be interpreted as the probability to succeed (or survive) at every step $\Delta t$.
 
-- Hints can be added anywhere in the task text.
-Type "hint" and press Tab.
-Hints should be added to an empty line in the task text.
-In hints you can use both HTML and Markdown.
-<div class="hint">
+The algorithm, therefore, has a function that calculates the quality of a state–action combination:
 
-Text of your hint
+$Q:S\times A\to \mathbb {R}$
 
-</div>
+Before learning begins, $Q$ is initialized to a possibly arbitrary fixed value (chosen by the programmer). Then, at each time $t$ the agent selects an action $a_{t}$, observes a reward $r_{t}$, enters a new state $s_{t+1}$, and $Q$ is updated. The core of the algorithm is a Bellman equation as a simple value iteration update, using the weighted average of the current value and the new information:
 
-- You may need to refer your learners to a particular lesson,
-task, or file. To achieve this, you can use the in-course links.
-Specify the path using the `[link_text](course://lesson1/task1/file1)` format.
+![](equation.png)
 
-- You can insert shortcuts in the task description.
-While **task.html/task.md** is open, right-click anywhere
-on the **Editor** tab and choose the **Insert shortcut** option
-from the context menu.
-For example: &shortcut:FileStructurePopup;.
 
-- Insert the &percnt;`IDE_NAME`&percnt; macro,
-which will be replaced by the actual IDE name.
-For example, **%IDE_NAME%**.
+[//]: # ($$Q^{new}&#40;s_{t},a_{t}&#41;\leftarrow\underbrace{Q&#40;s_{t},a_{t}&#41;}_{\text{current value}}+\underbrace{\alpha }_{\text{learning rate}}\cdot\overbrace{{\bigg&#40;}\underbrace{\underbrace{r_{t}}_{\text{reward}}+\underbrace{\gamma}_{\text{discount factor}}\cdot\underbrace{\max_{a}Q&#40;s_{t+1},a&#41;}_{\text{estimate of optimal future value}}}_{\text{new value &#40;temporal difference target&#41;}}-\underbrace{Q&#40;s_{t},a_{t}&#41;}_{\text{current value}}{\bigg&#41;}}^{\text{temporal difference}}}$$)
 
-- Insert PSI elements, by using links like
-`[element_description](psi_element://link.to.element)`.
-To get such a link, right-click the class or method
-and select **Copy Reference**.
-Then press &shortcut:EditorPaste; to insert the link where appropriate.
-For example, a [link to the "contains" method](psi_element://java.lang.String#contains).
 
-- You can add link to file using **full path** like this:
-  `[file_link](file://lesson1/task1/file.txt)`.
+where $r_{t}$ is the reward received when moving from the state $s_{t}$ to the state $s_{t+1}$, and $\alpha$  is the learning rate $(0<\alpha \leq 1)$.
+
+Note that $Q^{new}(s_{t},a_{t})$ is the sum of three factors:
+
+- $(1-\alpha )Q(s_{t},a_{t})$: the current value
+- $\alpha r_{t}$: the reward $r_{t}=r(s_{t},a_{t})$ to obtain if action $a_{t}$ is taken when in state $s_{t}$ (weighted by learning rate)
+- $\alpha \gamma \underset{a}{\max}Q(s_{t+1},a)$: the maximum reward that can be obtained from state $s_{t+1}$ (weighted by learning rate and discount factor)
+
+An **episode** of the algorithm ends when state $s_{t+1}$ is a terminal state. 
