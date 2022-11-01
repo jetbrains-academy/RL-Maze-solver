@@ -17,3 +17,6 @@ pairs, represented by the action values.
 **[Q-learning](https://en.wikipedia.org/wiki/Q-learning)** is a common form of RL
 where the optimal policy is learned implicitly in the form of a **Q-function**. The optimal action-value function $Q^∗$
 is known to be the unique solution to the **[Bellman equation](https://en.wikipedia.org/wiki/Bellman_equation)**.
+
+A **Q-table** records the expected value of a state when an action is taken. It records this for all state and action combinations. 
+In other words, a Q-table maps a reward to every (state, action) pair. To start the Q-learning algorithm, we set all Q-values to 0. As the algorithm runs and the agent explores states, we update the Q-table.
