@@ -1,12 +1,13 @@
 
 We have some predefined code that builds a Maze,
 which is an object of class Maze. `Maze.maze_grid` is a Numpy array of `Cell` objects.
+Some cells have walls between them, which the agent cannot go through.
 Please study the code in `cell.py` and `maze.py` to figure out how the maze is built.
 
 > If you are struggling to understand this code, we encourage you to take the AMAzing course, which will
 guide you through the steps of building such a maze.
 
-The goal is to get our Agent from the START (which can be any cell) to the END of the maze in the fewest number moves.
+Our goal is to get the Agent from the START (which can be any cell) to the END of the maze in the fewest number of moves.
 The Agent can move left, right, up, or down but not diagonally.
 
 For our solver algorithm to work, we will need to have all the cells in the
