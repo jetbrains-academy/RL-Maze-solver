@@ -1,0 +1,22 @@
+type: theory
+files:
+- name: __init__.py
+  visible: false
+- name: cell.py
+  visible: true
+- name: convert.py
+  visible: true
+- name: draw.py
+  visible: true
+- name: learn.py
+  visible: true
+- name: main.py
+  visible: true
+- name: maze.py
+  visible: true
+- name: feasibility.png
+  visible: false
+- name: maze_example.png
+  visible: false
+- name: final_run.py
+  visible: true
