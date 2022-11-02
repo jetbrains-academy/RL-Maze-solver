@@ -2,7 +2,7 @@ type: marketplace
 title: Reinforcement Learning Maze Solver
 language: English
 summary: |
-  This is an introductory RL course.
+  This is an introductory Reinforcement Learning tutorial. You will implement a simple Q-learning algorithm that uses rewards and penalties and an iteratively updated Q-table to teach a learning agent find the shortest path through a 2D maze.
 programming_language: Python
 environment: unittest
 content:

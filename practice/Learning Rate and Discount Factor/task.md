@@ -1,4 +1,4 @@
-Take a look at the code in final_run.py. This code will ask for your input, generate a maze and 
+Take a look at the code in `final_run.py`. This code will ask for your input, generate a maze and 
 run the Q-learning algorithm we implemented to find the shortest path. It will then output 
 the path.
 
@@ -13,6 +13,8 @@ Optimal parameter values in this problem will differ depending on how large the 
 Your task is now to find the combinations of parameters that work. When the algorithm works for too long and doesn't seem to be able to 
 find a path - maybe a different value combination is needed. With a large maze you might need to wait 
 a little for the algorithm to solve it.
+
+Please make sure you run the `final_run.py`. If you press the 'Run' button under the task description, `main.py` will run.
 
 <div class="hint">
 Suggested working combinations (try others as well! These are not necessarily optimal.):

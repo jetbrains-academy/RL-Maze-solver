@@ -32,7 +32,8 @@ class TestCase(unittest.TestCase):
         test_ones = test_ones.tolist()
         actual_ones = np.where(agent.R == 1)[0]
         actual_ones = actual_ones.tolist()
-        self.assertFalse(test_ones == actual_ones, msg="Maybe you forgot to call the implemented set_rewards method in the init.")
+        if test_ones == actual_ones:
+            self.fail(msg="Maybe you forgot to call the implemented set_rewards method in the init.")
 
     def test_agent_R(self):
         dimension1, dimension2 = (3, 3)
