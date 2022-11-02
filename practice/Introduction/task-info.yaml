@@ -1,5 +1,7 @@
 type: theory
 files:
+- name: main.py
+  visible: true
 - name: convert.py
   visible: false
 - name: __init__.py
@@ -10,8 +12,6 @@ files:
   visible: true
 - name: learn.py
   visible: false
-- name: main.py
-  visible: true
 - name: maze.py
   visible: true
 - name: maze_example.png
