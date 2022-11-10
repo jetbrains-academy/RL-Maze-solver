@@ -55,7 +55,7 @@ class Agent:
                     q = self.Q[next_state, nn_s]
                     if q > max_Q:
                         max_Q = q
-                # Bellman's equation: Q = [(1-a) * Q]  +  [a * (rt + (g * maxQ))]
+                # Bellman's equation: Q = [(1 - alpha) * Q]  +  [alpha * (reward + (gamma * maxQ))]
                 # Update the Q matrix
                 self.Q[curr_state][next_state] = ((1 - self.lrn_rate) * self.Q[curr_state][next_state]) + (
                             self.lrn_rate * (self.R[curr_state][next_state] + (self.gamma * max_Q)))

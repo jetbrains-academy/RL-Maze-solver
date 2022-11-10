@@ -25,7 +25,7 @@ class Agent:
 
     def train(self, F, max_epochs):
         # Compute the Q matrix using the
-        # Bellman's equation: Q = [(1-a) * Q]  +  [a * (rt + (g * maxQ))]
+        # Bellman's equation: Q = [(1 - alpha) * Q]  +  [alpha * (reward + (gamma * maxQ))]
         pass
 
     def walk(self):

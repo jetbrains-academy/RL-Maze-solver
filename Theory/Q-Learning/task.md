@@ -30,4 +30,8 @@ Note that $Q^{new}(s_{t},a_{t})$ is the sum of three factors:
 - $\alpha r_{t}$: the reward $r_{t}=r(s_{t},a_{t})$ to obtain if action $a_{t}$ is taken when in state $s_{t}$ (weighted by learning rate)
 - $\alpha \gamma \underset{a}{\max}Q(s_{t+1},a)$: the maximum reward that can be obtained from state $s_{t+1}$ (weighted by learning rate and discount factor)
 
+We can transform this into pseudocode that might be a bit easier to read, understand and implement:
+
+`Q = [(1 - alpha) * Q]  +  [alpha * (reward + (gamma * maxQ))]`
+
 An **episode** of the algorithm ends when state $s_{t+1}$ is a terminal state. 
