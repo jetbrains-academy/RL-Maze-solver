@@ -21,8 +21,10 @@ if __name__ == "__main__":
                 break
             else:
                 print("Maze dimensions cannot be 0.")
-        except Exception:
-            print("Dimensions must be integers. Please enter two numbers separated by a space.")
+        except ValueError:
+            print("Dimensions must be integers.")
+        except IndexError:
+            print("Please enter two numbers separated by a space.")
 
     while True:
         try:
@@ -32,8 +34,10 @@ if __name__ == "__main__":
                 break
             else:
                 print("Start coordinates should be inside the maze. Numbering is zero-based.")
-        except Exception:
-            print("Start coordinates must be integers. Please enter two numbers separated by a space.")
+        except ValueError:
+            print("Start coordinates must be integers.")
+        except IndexError:
+            print("Please enter two numbers separated by a space.")
 
     while True:
         try:
@@ -82,4 +86,3 @@ if __name__ == "__main__":
 
     agent.walk()
     make_movie(maze, feasibility, agent.path)
-

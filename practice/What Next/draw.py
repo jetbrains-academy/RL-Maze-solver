@@ -1,6 +1,4 @@
 from cell import Cell
-from maze import Maze
-from convert import Feasibility
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
@@ -72,7 +70,6 @@ def make_movie(maze, feasibility, path, filename="maze_path.gif"):
     width, height = (margin + cell_side * dim for dim in maze.maze_grid.shape)
 
     for position in path:
-        # cell = np.where(feasibility.numbered_grid=path)
         ind1 = np.where(feasibility.numbered_grid == position)[0][0]
         ind2 = np.where(feasibility.numbered_grid == position)[1][0]
         cell = maze.maze_grid[ind1, ind2]

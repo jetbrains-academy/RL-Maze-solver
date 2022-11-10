@@ -1,5 +1,3 @@
-### Task
-
 In the file convert.py, complete the definition of the `__init__` method of class Feasibility.
 You will need to define two more attributes. The first one, `numbered_grid`, should be a Numpy array of the same shape as the maze grid and
 containing the numbers of all cells in the grid

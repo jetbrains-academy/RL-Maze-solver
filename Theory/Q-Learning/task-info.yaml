@@ -6,3 +6,5 @@ files:
   visible: false
 - name: equation.png
   visible: false
+- name: equation_dark.png
+  visible: false

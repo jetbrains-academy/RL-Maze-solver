@@ -13,15 +13,16 @@ $\alpha$ is learning rate; $r_t$ is the reward for the transition; $\gamma$ is t
 This largest value, $maxQ$, will be used to update the Q matrix. 
 
 
-First we will need to define the Agent class. complete the `__init__` method of the class
+First we will need to define the Agent class. Complete the `__init__` method of the class
 so that it has the following attributes:
+- Gamma (`gamma`) - the discount factor (already defined).
+- Learning rate (`lrn_rate`, already defined).
+- `path` - a list (initially empty) that at the end of the training process will contain the optimal path - a sequence of cell numbers (already defined).
 - `Q` - the Q matrix. It should be of the same shape as the F-matrix and initially contain zeroes.
 - `R` - the reward matrix. It should initially be a copy of the F-matrix.
 - `start` - the number of the start cell. You can get it from the `numbered_grid` by the start coordinates.
 - `goal` - the number of the goal cell. You can get it from the `numbered_grid` by the coordinates of the maze `end`.
 - `n_states` - the number of possible states in the maze, which is equal to the number of cells.
-- Gamma (`gamma`) - the discount factor.
-- Learning rate (`lrn_rate`).
-- `path` - a list (initially empty) that at the end of the training process will contain the optimal path - a sequence of cell numbers.
+
 
 Please make sure that the attributes you define have exactly the right names.
