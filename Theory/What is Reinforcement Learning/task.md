@@ -3,7 +3,7 @@
 Deep Reinforcement Learning gained a lot of publicity when  
 Google [acquired](https://www.theinformation.com/articles/google-beat-facebook-for-deepmind-creates-ethics-board) an AI Startup DeepMind for more than $500M (2014) and Intel [bought](https://www.reuters.com/article/us-intal-mobileye-idUSKBN16K0ZP) Mobileye 
 for a cool $15B (2017). Google also [patented](https://patents.google.com/patent/US20150100530) the methods and apparatus for deep Q-learning developed 
-by its DeepMind division. In this tutorial we will try to explain some of the main 
+by its DeepMind division. In this tutorial, we will try to explain some of the main 
 ideas behind deep reinforcement learning (Q-learning) by creating
 a simple application for solving mazes.
 
@@ -26,7 +26,7 @@ RL is applied on an agent, which operates in an
 environment and needs to move through a series of **states** in order to reach a
 pre-defined final state. The agent is exploring and exploiting past experiences 
 (episodes) in order to achieve its goal. It may fail again and again, but 
-after receiving lots of rewards and penalties it will (hopefully) arrive to the solution 
+after receiving lots of rewards and penalties, it will (hopefully) arrive to the solution 
 of the problem. The solution will be reached if the agent finds an optimal sequence 
 of states in which the accumulated sum of rewards is maximal (in other words, we program the 
 agent to accumulate a maximal reward, and while doing so, it actually solves our problem). 
@@ -41,7 +41,7 @@ may need to endure many small penalties and keep going in order to get to the fi
 
 Reinforcement learning is particularly well-suited to problems that include a long-term versus short-term reward trade-off. 
 It has been applied successfully to various problems, including robot control, industry automation, 
-trading and finance, natural language processing, automated medical diagnosis, gaming, news recommendation and so on.
+trading and finance, natural language processing, automated medical diagnosis, gaming, news recommendation, and so on.
 
 
 <style>
