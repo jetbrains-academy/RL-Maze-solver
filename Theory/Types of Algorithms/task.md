@@ -1,8 +1,8 @@
 ## Reinforcement Learning Algorithms
 
-In a Reinforcement Learning algorithm the agent's policy can be of two types:
+In a Reinforcement Learning algorithm, the agent's policy can be of two types:
 
-- In **on-policy** algorithms, the $𝑄(𝑠,𝑎)$ function is learned from actions that we took using our current policy $𝜋(𝑎|𝑠)$.
+- In **on-policy** algorithms, the $𝑄(𝑠,𝑎)$ function is learned from the actions that we took using our current policy $𝜋(𝑎|𝑠)$.
 
 - In **off-policy** algorithms, the $𝑄(𝑠,𝑎)$ function is learned from taking different actions (for example, random actions).
 
@@ -15,7 +15,7 @@ randomness to solve problems that might be deterministic in principle. Most usef
 impossible to use other approaches. Monte Carlo methods are mainly used in three problem 
 classes: optimization, numerical integration, and generating draws from a probability 
 distribution. Areas of application include physical sciences, engineering, climate science,
-computational biology, computer graphics and so on.
+computational biology, computer graphics, and so on.
 
 ### Q-learning
 
@@ -23,16 +23,16 @@ Q-learning is a model-free off-policy reinforcement learning algorithm to learn 
 action in a particular state. It does not require a model of the environment (hence 
 "model-free"), and it can handle problems with stochastic transitions and rewards without 
 requiring adaptations. Applications include gaming, robotics, automatic configuration of multi-tier web systems,
-improved news recommendations systems, estimating optimal treatment strategies in personalized medicine and so on.
+improved news recommendation systems, estimating optimal treatment strategies in personalized medicine, and so on.
 
 - **Deep Q-learning** (DQN):
-the [DeepMind](https://en.wikipedia.org/wiki/DeepMind) system used a deep convolutional neural network, with layers of tiled convolutional 
+the [DeepMind](https://en.wikipedia.org/wiki/DeepMind) system uses a deep convolutional neural network, with layers of tiled convolutional 
 filters to mimic the effects of receptive fields.
 
 
 - **SARSA**
 State–action–reward–state–action (SARSA) is an on-policy variation of Q-learning. 
-The update equation for SARSA depends on the current state, current action, reward obtained, next state and next action.
+The update equation for SARSA depends on the current state, current action, reward obtained, next state, and next action.
 $$Q^{new}(s_{t},a_{t})\leftarrow Q(s_{t},a_{t})+\alpha [r_{t}+\gamma Q(s_{t+1},a_{t+1})-Q(s_{t},a_{t})]$$
 
 >Compare this equation with the Q-learning update equation in the next task to understand the difference.

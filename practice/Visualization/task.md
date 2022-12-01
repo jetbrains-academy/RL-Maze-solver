@@ -8,9 +8,9 @@ the agent moves through your labyrinth!
 
 You will also need to import this function from `draw.py`.
 This module contains some drawing functions we predefined for you to create a visualization for this tutorial.
-If you're interested how it works - go ahead and study the code!
+If you're interested how it works – go ahead and study the code!
 
-Please make sure you run the `final_run.py`. If you press the 'Run' button under the task description, `main.py` will run.
+Please make sure you run `final_run.py`. If you press the 'Run' button under the task description, `main.py` will run.
 
-You can see the gif if you go to the next task after running the code here
+You can see the gif if you go to the next task after running the code here,
 or you can open it in a browser :)

@@ -1,9 +1,9 @@
-Implement the method `walk` that will walk the 
-Q matrix to build the shortest path through the maze.
+Implement the method `walk`, which will walk the 
+Q-matrix to build the shortest path through the maze.
 The method should fill `Agent.path` so that it stores the shortest path (a sequence of cell
 numbers from start to goal, inclusively).
 
-Remember that in the Q matrix row indices are "from" cells and column indices are "to" cells.
+Remember that in the Q-matrix, row indices are "from" cells and column indices are "to" cells.
 Starting from the row that corresponds to the starting cell, you need to find the next cell to move in to 
 by finding the largest Q values in the given row. Repeat this until you reach the goal. The method assumes the goal state is reachable.
 
