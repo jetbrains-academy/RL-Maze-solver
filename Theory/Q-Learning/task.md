@@ -23,6 +23,7 @@ Before learning begins, $Q$ is initialized to a possibly arbitrary fixed value (
 
 
 where $r_{t}$ is the reward received when moving from the state $s_{t}$ to the state $s_{t+1}$, and $\alpha$  is the learning rate $(0<\alpha \leq 1)$.
+All of the algorithms mentioned in the previous task use this equation in their core.
 
 Note that $Q^{new}(s_{t},a_{t})$ is the sum of three factors:
 

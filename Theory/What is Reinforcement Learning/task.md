@@ -31,11 +31,12 @@ of the problem. The solution will be reached if the agent finds an optimal seque
 of states in which the accumulated sum of rewards is maximal (in other words, we program the 
 agent to accumulate a maximal reward, and while doing so, it actually solves our problem). 
 It may happen that in order to reach the goal, the agent will have to overcome 
-many negative rewards (penalties) on its way. For example, the agent in the image here 
-receives a small penalty for every possible move. This is done because we want it to get 
+many negative immediate rewards (penalties) on its way. For example, the agent in the image here 
+receives a small penalty for every possible move, and a large final reward for reaching the goal. This is done because we want it to get 
 to the target cell in the shortest possible path, to discourage going in circles or back and forth. 
 Still, the shortest path to the target cell can be long and winding, and our agent 
-may need to endure many small penalties and keep going in order to get to the final big reward (a delayed reward).
+may need to endure many small penalties and keep going in order to get to the final big reward (a delayed reward). 
+You can read more about long-term and short-term rewards in reinforcement learning this [article](https://en.wikipedia.org/wiki/Reinforcement_learning#Introduction).
 
 <img src="maze_path.gif" width="600">
 
