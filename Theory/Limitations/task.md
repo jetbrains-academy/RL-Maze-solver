@@ -11,4 +11,4 @@ taken at a time step may result in a future reward appearing some arbitrary numb
 
 The standard Q-learning algorithm (using a $Q$ table) applies only to discrete action and state spaces. Discretization 
 of these values leads to inefficient learning, largely due to the curse of dimensionality. However, there are adaptations of 
-Q-learning that attempt to solve this problem, such as Wire-fitted Neural Network Q-Learning.
+Q-learning that attempt to solve this problem, such as [Wire-fitted Neural Network Q-Learning](https://users.cecs.anu.edu.au/~rsl/rsl_papers/99ai.kambara.pdf).

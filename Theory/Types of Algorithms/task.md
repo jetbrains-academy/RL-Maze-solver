@@ -11,10 +11,10 @@ In a Reinforcement Learning algorithm, the agent's policy can be of two types:
 Monte Carlo methods are a broad class of computational algorithms that rely on 
 repeated random sampling to obtain numerical results. They can be either on- or off-policy.
 The underlying concept is to use 
-randomness to solve problems that might be deterministic in principle. Most useful when it is difficult or 
-impossible to use other approaches. Monte Carlo methods are mainly used in three problem 
+randomness to solve problems that might be deterministic in principle. Monte Carlo methods are mainly used in three problem 
 classes: optimization, numerical integration, and generating draws from a probability 
-distribution. Areas of application include physical sciences, engineering, climate science,
+distribution, and they are most useful when it is difficult or
+impossible to use other approaches. Areas of application include physical sciences, engineering, climate science,
 computational biology, computer graphics, and so on.
 
 ### Q-learning
@@ -36,4 +36,9 @@ The update equation for SARSA depends on the current state, current action, rewa
 $$Q^{new}(s_{t},a_{t})\leftarrow Q(s_{t},a_{t})+\alpha [r_{t}+\gamma Q(s_{t+1},a_{t+1})-Q(s_{t},a_{t})]$$
 
 >Compare this equation with the Q-learning update equation in the next task to understand the difference.
+
+
+You can read more about the differences between on-policy and off-policy algorithms in this [article](https://www.cs.utexas.edu/users/pstone/Papers/bib2html-links/DeepRL16-hausknecht.pdf).
+Value iteration and Policy iteration are another pair of very important concepts in RL, so if you would like to have
+a clearer understanding of different approaches, we encourage you to read this [article](https://towardsdatascience.com/policy-and-value-iteration-78501afb41d2).
 
