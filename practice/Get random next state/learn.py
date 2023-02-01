@@ -1,5 +1,6 @@
 import numpy as np
 from convert import find_reachable_neighbors
+import random
 
 
 def get_poss_next_states(state, F, n_states):
@@ -15,7 +16,8 @@ def get_poss_next_states(state, F, n_states):
 def get_rnd_next_state(state, F, n_states):
     # Given a state, pick a feasible next state.
     poss_next_states = get_poss_next_states(state, F, n_states)
-    next_state = poss_next_states[np.random.randint(0, len(poss_next_states))]
+    # next_state = poss_next_states[np.random.randint(0, len(poss_next_states))]
+    next_state = poss_next_states[0]
     return next_state
 
 
