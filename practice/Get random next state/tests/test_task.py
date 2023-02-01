@@ -36,3 +36,24 @@ class TestCase(unittest.TestCase):
                     actual_next_state = get_rnd_next_state(curr_state, feasibility.F_matrix, n_states)
                     test_next_state = test_get_rnd_next_state(curr_state, feasibility.F_matrix, n_states)
                     self.assertEqual(actual_next_state, test_next_state, msg="")
+
+    def test_fixed_position(self):
+        results = []
+        for iteration in range(10):
+            dimension1 = 3
+            dimension2 = 3
+            start_x = 0
+            start_y = 0
+
+            maze = Maze(dimension1, dimension2, [start_x, start_y])
+
+            feasibility = Feasibility(maze)
+            n_states = feasibility.cells
+
+            for i in range(0, n_states):
+                curr_state = i
+                actual_next_state = get_rnd_next_state(curr_state, feasibility.F_matrix, n_states)
+                poss_next_states = get_poss_next_states(curr_state, feasibility.F_matrix, n_states)
+                results.append(actual_next_state == poss_next_states[0])
+        if all(results):
+            self.fail(msg="Please use an actual random function to get a random next state.")
