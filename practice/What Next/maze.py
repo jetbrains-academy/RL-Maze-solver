@@ -29,25 +29,28 @@ class Maze:
         return neighbors
 
     def __make_maze(self, start_coords):
-        n = self.nx * self.ny
-        cell_stack = []
-        # current_cell = self.cell_at(0, 0)
-        current_cell = self.cell_at(start_coords[0], start_coords[1])
-        current_cell.status = 'Start'
-        n_visited = 1
+        while True:
+            n = self.nx * self.ny
+            cell_stack = []
+            # current_cell = self.cell_at(0, 0)
+            current_cell = self.cell_at(start_coords[0], start_coords[1])
+            current_cell.status = 'Start'
+            n_visited = 1
 
-        while n_visited < n:
-            neighbors = self.find_valid_neighbors(current_cell)
+            while n_visited < n:
+                neighbors = self.find_valid_neighbors(current_cell)
 
-            if not neighbors:
-                current_cell = cell_stack.pop()
-                continue
+                if not neighbors:
+                    current_cell = cell_stack.pop()
+                    continue
 
-            direction, next_cell = random.choice(neighbors)
-            current_cell.knock_down_wall(next_cell, direction)
-            cell_stack.append(current_cell)
-            current_cell = next_cell
-            n_visited += 1
-            if n_visited == n:
-                current_cell.status = 'End'
-                self.end = [current_cell.x, current_cell.y]
+                direction, next_cell = random.choice(neighbors)
+                current_cell.knock_down_wall(next_cell, direction)
+                cell_stack.append(current_cell)
+                current_cell = next_cell
+                n_visited += 1
+                if n_visited == n:
+                    current_cell.status = 'End'
+                    self.end = [current_cell.x, current_cell.y]
+            if self.end != start_coords:
+                break
