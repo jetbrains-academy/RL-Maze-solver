@@ -32,6 +32,7 @@ class TestCase(unittest.TestCase):
                 curr_state = i
                 with mock.patch('numpy.random.randint', mocked_random_choice), \
                         mock.patch('random.randint', mocked_random_choice), \
+                        mock.patch('random.shuffle', mocked_random_choice), \
                         mock.patch('random.choice', mocked_random_choice):
                     actual_next_state = get_rnd_next_state(curr_state, feasibility.F_matrix, n_states)
                     test_next_state = test_get_rnd_next_state(curr_state, feasibility.F_matrix, n_states)
