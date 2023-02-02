@@ -64,13 +64,17 @@ class Agent:
                 if curr_state == self.goal:
                     break
 
-    def walk(self):
+    def walk(self, maze):
         # Walk to the goal from start using Q matrix.
         curr = self.start
         self.path.append(curr)
         print(str(curr) + "->", end="")
         while curr != self.goal:
             next_ = np.argmax(self.Q[curr])
+            if next_ not in find_reachable_neighbors(maze, curr):
+                print('Path not found!')
+                self.path.append('break')
+                break
             print(str(next_) + "->", end="")
             curr = next_
             self.path.append(curr)
