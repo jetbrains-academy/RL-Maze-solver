@@ -71,6 +71,7 @@ class Agent:
         print(str(curr) + "->", end="")
         while curr != self.goal:
             next_ = np.argmax(self.Q[curr])
+            # Here we need to convert this curr number into a corresponding cell object!!!!
             if next_ not in find_reachable_neighbors(maze, curr):
                 print('Path not found!')
                 self.path.append('break')
