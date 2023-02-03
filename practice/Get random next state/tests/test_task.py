@@ -36,7 +36,10 @@ class TestCase(unittest.TestCase):
                         mock.patch('random.choice', mocked_random_choice):
                     actual_next_state = get_rnd_next_state(curr_state, feasibility.F_matrix, n_states)
                     test_next_state = test_get_rnd_next_state(curr_state, feasibility.F_matrix, n_states)
-                    self.assertEqual(actual_next_state, test_next_state, msg="")
+                    self.assertEqual(actual_next_state, test_next_state, msg="Either you have not "
+                                                                             "implemented the random function "
+                                                                             "or you used one of the "
+                                                                             "unsupported methods.")
 
     def test_fixed_position(self):
         results = []

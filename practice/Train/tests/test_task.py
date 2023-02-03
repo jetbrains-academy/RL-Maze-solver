@@ -1,16 +1,13 @@
 import unittest
 from maze import Maze
-from convert import Feasibility, find_reachable_neighbors
-import numpy as np
+from convert import Feasibility
 from learn import Agent
 from tests.test_learn import TestAgent
-import wrapt_timeout_decorator
 from tests.decorated_test_function import test_function
 
 timeoutlimit = 20
 
 class TestCase(unittest.TestCase):
-    # @wrapt_timeout_decorator.timeout(timeoutlimit)
     def test_agent_R(self):
         for x in range(10):
             dimension1, dimension2 = (3, 3)
