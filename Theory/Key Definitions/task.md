@@ -4,7 +4,7 @@
 
 **State**: a single element in the environment. In our case, a state is a cell. 
 
-**Agent**: an entity that can interact with the environment with via actions. The agent exists in a state. Our agent is visualized as the blue dot in the example in the previous task.
+**Agent**: an entity that can interact with the environment via actions. The agent exists in a state. Our agent is visualized as the blue dot in the example in the previous task.
 
 **Action**: a function an agent can invoke from a given state to move to another state. Our possible actions are move up, move down, move left, and move right. 
 
