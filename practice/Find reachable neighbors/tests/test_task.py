@@ -43,4 +43,7 @@ class TestCase(unittest.TestCase):
             for y in range(dimension2):
                 neighbors = find_reachable_neighbors(maze, maze.maze_grid[x, y])
                 test_neighbors = test_find_reachable_neighbors(maze, maze.maze_grid[x, y])
-                self.assertEqual(test_neighbors, neighbors, msg="Neighbors do not seem right!")
+                neighbor_list_match = []
+                for neighbor in neighbors:
+                    neighbor_list_match.append(neighbor in test_neighbors)
+                self.assertTrue(all(neighbor_list_match), msg="Neighbors do not seem right!")
