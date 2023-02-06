@@ -20,7 +20,10 @@ class TestCase(unittest.TestCase):
             agent = Agent(feasibility, gamma, lrn_rate, maze, start_x, start_y)
             test_agent = TestAgent(feasibility, gamma, lrn_rate, maze, start_x, start_y)
             try:
-                test_function(agent, test_agent, feasibility.F_matrix, max_epochs)
+                err = test_function(agent, test_agent, feasibility.F_matrix, max_epochs)
+                if err:
+                    # I do not understand why this (err) is not going to the checker output. So annoying.
+                    self.fail(msg=err)
             except TimeoutError as e:
                 self.fail(msg=f"TimeoutError after {timeoutlimit} seconds. Your method's execution does not seem to end in a "
                               "reasonable amount of time.")
