@@ -38,7 +38,7 @@ class Agent:
         previous = feasibility.numbered_grid[prev_index[0], prev_index[1]][0]
         self.R = np.where(self.R == 1, -0.1, self.R)
         # Set the highest reward for reaching the end of the maze:
-        self.R[previous, self.goal] = 1000.0
+        self.R[previous, self.goal] = 10.0
 
     def train(self, F, max_epochs):
         # Compute the Q matrix
@@ -64,14 +64,22 @@ class Agent:
                 if curr_state == self.goal:
                     break
 
-    def walk(self, maze):
+    def walk(self, maze, feasibility):
         # Walk to the goal from start using Q matrix.
         curr = self.start
         self.path.append(curr)
         print(str(curr) + "->", end="")
         while curr != self.goal:
+            curr_position = np.where(feasibility.numbered_grid == curr)
+            curr_cell = maze.maze_grid[curr_position[0], curr_position[1]][0]
+
             next_ = np.argmax(self.Q[curr])
-            if next_ not in find_reachable_neighbors(maze, curr):
+            next_position = np.where(feasibility.numbered_grid == next_)
+            next_cell = maze.maze_grid[next_position[0], next_position[1]][0]
+
+            # if next_ not in find_reachable_neighbors(maze, curr_cell_obj):
+            reachable_neighbors = find_reachable_neighbors(maze, curr_cell)
+            if next_cell not in reachable_neighbors:
                 print('Path not found!')
                 self.path.append('break')
                 break

@@ -84,6 +84,5 @@ if __name__ == "__main__":
 
     print(f"Using Q to go from start to goal ({agent.goal})")
 
-    agent.walk(maze)
-    if 'break' not in agent.path:
-        make_movie(maze, feasibility, agent.path)
+    agent.walk(maze, feasibility)
+    make_movie(maze, feasibility, agent.path)

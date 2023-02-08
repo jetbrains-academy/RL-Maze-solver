@@ -28,8 +28,8 @@ class TestCase(unittest.TestCase):
             try:
                 agent.train(feasibility.F_matrix, max_epochs)
                 test_agent.train(feasibility.F_matrix, max_epochs)
-                agent.walk(maze)
-                test_agent.walk(maze)
+                agent.walk(maze, feasibility)
+                test_agent.walk(maze, feasibility)
                 self.assertEqual(test_agent.path, agent.path)
 
             except TimeoutError as e:

@@ -16,9 +16,9 @@ def draw_cell(cell, image, color="black", count=0, wide=5, method="grid"):
     y = margin + line_thickness + cell.y * cell_side
 
     lines = [(x - cell_side / 2, y - cell_side / 2), (x + cell_side / 2, y - cell_side / 2)], \
-            [(x - cell_side / 2, y + cell_side / 2), (x + cell_side / 2, y + cell_side / 2)], \
-            [(x + cell_side / 2, y - cell_side / 2), (x + cell_side / 2, y + cell_side / 2)], \
-            [(x - cell_side / 2, y - cell_side / 2), (x - cell_side / 2, y + cell_side / 2)]
+        [(x - cell_side / 2, y + cell_side / 2), (x + cell_side / 2, y + cell_side / 2)], \
+        [(x + cell_side / 2, y - cell_side / 2), (x + cell_side / 2, y + cell_side / 2)], \
+        [(x - cell_side / 2, y - cell_side / 2), (x - cell_side / 2, y + cell_side / 2)]
 
     shown_walls = [i for (i, v) in zip(lines, cell.walls.values()) if v]
     for wall in shown_walls:
@@ -68,6 +68,9 @@ def make_movie(maze, feasibility, path, filename="maze_path.gif"):
     """Function for drawing a visualization of how the agent moves through the labyrinth."""
     images = []
     width, height = (margin + cell_side * dim for dim in maze.maze_grid.shape)
+
+    if 'break' in path:
+        return
 
     for position in path:
         ind1 = np.where(feasibility.numbered_grid == position)[0][0]
