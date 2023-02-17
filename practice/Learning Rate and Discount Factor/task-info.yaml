@@ -20,5 +20,3 @@ files:
   visible: false
 - name: maze_example.png
   visible: false
-- name: runConfigurations/lrn_rate_discount_final_run.run.xml
-  visible: false

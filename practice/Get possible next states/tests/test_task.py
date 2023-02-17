@@ -28,5 +28,5 @@ class TestCase(unittest.TestCase):
         for cell in np.nditer(feasibility.numbered_grid):
             test_poss_next_states = test_get_poss_next_states(cell, feasibility.F_matrix, n_states)
             actual_poss_next_states = get_poss_next_states(cell, feasibility.F_matrix, n_states)
-            self.assertEqual(actual_poss_next_states, test_poss_next_states, msg=f"Wrong possible next states found for cell {cell} for a test F_matrix {feasibility.F_matrix}")
+            self.assertEqual(test_poss_next_states, actual_poss_next_states, msg=f"Wrong possible next states found for cell {cell} for a test F_matrix {feasibility.F_matrix}")
 

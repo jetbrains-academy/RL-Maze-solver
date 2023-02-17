@@ -36,7 +36,7 @@ receives a small penalty for every possible move, and a large final reward for r
 to the target cell in the shortest possible path, to discourage going in circles or back and forth. 
 Still, the shortest path to the target cell can be long and winding, and our agent 
 may need to endure many small penalties and keep going in order to get to the final big reward (a delayed reward). 
-You can read more about long-term and short-term rewards in reinforcement learning this [article](https://en.wikipedia.org/wiki/Reinforcement_learning#Introduction).
+You can read more about long-term and short-term rewards in reinforcement learning in this [article](https://en.wikipedia.org/wiki/Reinforcement_learning#Introduction).
 
 <img src="maze_path.gif" width="600">
 

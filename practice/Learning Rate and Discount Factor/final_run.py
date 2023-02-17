@@ -82,7 +82,7 @@ if __name__ == "__main__":
     print("The Q matrix is: \n ")
     my_print(agent.Q)
 
-    print(f"Using Q to go from 0 to goal ({agent.goal})")
+    print(f"Using Q to go from start to goal ({agent.goal})")
 
-    agent.walk()
+    agent.walk(maze, feasibility)
     make_movie(maze, feasibility, agent.path)
