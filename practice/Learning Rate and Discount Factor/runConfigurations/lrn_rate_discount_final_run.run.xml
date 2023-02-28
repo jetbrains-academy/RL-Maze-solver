@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="lrn_rate_discount_final_run" type="PythonConfigurationType" factoryName="Python">
-    <module name="Reinforcement Learning Maze Solver" />
+    <module name="RL-Maze-solver" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
