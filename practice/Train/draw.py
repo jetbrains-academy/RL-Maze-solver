@@ -69,6 +69,9 @@ def make_movie(maze, feasibility, path, filename="maze_path.gif"):
     images = []
     width, height = (margin + cell_side * dim for dim in maze.maze_grid.shape)
 
+    if 'break' in path:
+        return
+
     for position in path:
         ind1 = np.where(feasibility.numbered_grid == position)[0][0]
         ind2 = np.where(feasibility.numbered_grid == position)[1][0]

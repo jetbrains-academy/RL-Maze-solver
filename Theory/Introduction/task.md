@@ -14,5 +14,5 @@ To get the most out of this course, you will need to have some knowledge of the 
 
 It might also be fun to take the [AMazing](https://plugins.jetbrains.com/plugin/17519-amazing) course fist. There we explore building the kind of maze that we will solve in this course.
 
-It you believe your Python or NumPy skills to be insufficient, we encourage you to take [Introduction to Python](https://plugins.jetbrains.com/plugin/16630-introduction-to-python) 
+If you believe your Python or NumPy skills to be insufficient, we encourage you to take [Introduction to Python](https://plugins.jetbrains.com/plugin/16630-introduction-to-python) 
 and/or [Python Libraries – NumPy](https://plugins.jetbrains.com/plugin/18302-python-libraries--numpy) course first.

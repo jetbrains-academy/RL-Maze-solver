@@ -44,7 +44,7 @@ class TestCase(unittest.TestCase):
         lrn_rate = 0.5
         agent = Agent(feasibility, gamma, lrn_rate, maze, start_x, start_y)
         _, _, test_R = test_set_rewards(maze, feasibility)
-        np.testing.assert_array_equal(agent.R, test_R, err_msg="Reward matrix seems off")
+        np.testing.assert_array_equal(test_R, agent.R, err_msg="Reward matrix seems off")
 
     def test_last_reward(self):
         dimension1, dimension2 = (3, 3)
@@ -55,6 +55,6 @@ class TestCase(unittest.TestCase):
         lrn_rate = 0.5
         agent = Agent(feasibility, gamma, lrn_rate, maze, start_x, start_y)
         goal, previous, test_R = test_set_rewards(maze, feasibility)
-        self.assertEqual(agent.R[previous, goal], test_R[previous, goal], msg="The reward for reaching the goal cell should be 1000.0")
+        self.assertEqual(test_R[previous, goal], agent.R[previous, goal], msg="The reward for reaching the goal cell should be 1000.0")
         self.assertTrue(0 in agent.R and -0.1 in agent.R and 1000.0 in agent.R, msg="R matrix should contain values 0, -0.1 and 1000.0.")
     #

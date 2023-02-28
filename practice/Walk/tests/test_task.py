@@ -28,9 +28,9 @@ class TestCase(unittest.TestCase):
             try:
                 agent.train(feasibility.F_matrix, max_epochs)
                 test_agent.train(feasibility.F_matrix, max_epochs)
-                agent.walk()
-                test_agent.walk()
-                self.assertEqual(agent.path, test_agent.path)
+                agent.walk(maze, feasibility)
+                test_agent.walk(maze, feasibility)
+                self.assertEqual(test_agent.path, agent.path)
 
             except TimeoutError as e:
                 self.fail(msg=f"TimeoutError after {timeoutlimit} seconds. Your implementation's execution does not seem "
