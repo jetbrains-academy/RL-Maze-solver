@@ -14,7 +14,6 @@ Your task is now to find the combinations of parameters that work. When the algo
 find a path – maybe a different value combination is needed. With a large maze, you might need to wait 
 a little for the algorithm to solve it.
 
-Please make sure you run `final_run.py`. If you press the 'Run' button under the task description, `main.py` will run.
 
 <div class="hint">
 Suggested working combinations (try others as well, these are not necessarily optimal):
