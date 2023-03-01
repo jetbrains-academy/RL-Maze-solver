@@ -28,6 +28,6 @@ class Agent:
         # Bellman's equation: Q = [(1 - alpha) * Q]  +  [alpha * (reward + (gamma * maxQ))]
         pass
 
-    def walk(self):
+    def walk(self, maze, feasibility):
         # Walk to the goal from start using the Q matrix.
         pass
