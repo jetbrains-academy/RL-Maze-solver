@@ -51,5 +51,5 @@ if __name__ == "__main__":
 
     print(f"Using Q to go from start to goal ({agent.goal})")
 
-    agent.walk()
+    agent.walk(maze, feasibility)
 
