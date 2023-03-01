@@ -20,3 +20,5 @@ files:
   visible: false
 - name: maze_example.png
   visible: false
+- name: runConfigurations/final_run_gif.run.xml
+  visible: false
