@@ -80,7 +80,7 @@ class Agent:
             # if next_ not in find_reachable_neighbors(maze, curr_cell_obj):
             reachable_neighbors = find_reachable_neighbors(maze, curr_cell)
             if next_cell not in reachable_neighbors:
-                print('Path not found!')
+                print('break. Path not found!')
                 self.path.append('break')
                 break
             print(str(next_) + "->", end="")

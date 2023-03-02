@@ -12,8 +12,9 @@ Optimal parameter values in this problem will differ depending on how large the 
 
 Your task is now to find the combinations of parameters that work. When the algorithm works for too long and doesn't seem to be able to 
 find a path – maybe a different value combination is needed. With a large maze, you might need to wait 
-a little for the algorithm to solve it.
-
+a little for the algorithm to solve it. If you end up receiving a `'Path not found!'` (or whatever you programmed)
+message from `walk()` - maybe you should also try a different combination of the parameters (generally, for 
+larger mazes greater gamma and learning rate values are needed). It can also be caused by a problem with your implementation though.
 
 <div class="hint">
 Suggested working combinations (try others as well, these are not necessarily optimal):

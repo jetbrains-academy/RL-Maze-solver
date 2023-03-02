@@ -68,7 +68,7 @@ class TestAgent:
         # Walk to the goal from start using Q matrix.
         curr = self.start
         self.path.append(curr)
-        print(str(curr) + "->", end="")
+        # print(str(curr) + "->", end="")
         while curr != self.goal:
             curr_position = np.where(feasibility.numbered_grid == curr)
             curr_cell = maze.maze_grid[curr_position[0], curr_position[1]][0]
@@ -80,10 +80,10 @@ class TestAgent:
             # if next_ not in find_reachable_neighbors(maze, curr_cell_obj):
             reachable_neighbors = find_reachable_neighbors(maze, curr_cell)
             if next_cell not in reachable_neighbors:
-                print('Path not found!')
+                # print('Path not found!')
                 self.path.append('break')
                 break
-            print(str(next_) + "->", end="")
+            # print(str(next_) + "->", end="")
             curr = next_
             self.path.append(curr)
-        print("done")
+        # print("done")
