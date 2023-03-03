@@ -20,5 +20,3 @@ files:
   visible: false
 - name: final_run.py
   visible: false
-- name: maze.png
-  visible: true
