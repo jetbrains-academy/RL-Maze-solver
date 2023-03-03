@@ -3,7 +3,7 @@ from maze import Maze
 from cell import Cell
 from convert import Feasibility
 import numpy as np
-from learn import get_poss_next_states
+from learn import get_possible_next_states
 
 
 def test_get_poss_next_states(state, F, n_states):
@@ -27,6 +27,6 @@ class TestCase(unittest.TestCase):
         n_states = feasibility.cells
         for cell in np.nditer(feasibility.numbered_grid):
             test_poss_next_states = test_get_poss_next_states(cell, feasibility.F_matrix, n_states)
-            actual_poss_next_states = get_poss_next_states(cell, feasibility.F_matrix, n_states)
+            actual_poss_next_states = get_possible_next_states(cell, feasibility.F_matrix, n_states)
             self.assertEqual(test_poss_next_states, actual_poss_next_states, msg=f"Wrong possible next states found for cell {cell} for a test F_matrix {feasibility.F_matrix}")
 

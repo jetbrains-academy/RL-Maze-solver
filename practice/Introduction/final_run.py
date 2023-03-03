@@ -2,7 +2,6 @@ from maze import Maze
 from convert import Feasibility
 from learn import Agent
 import pandas as pd
-from draw import make_movie
 
 
 def my_print(Q):
@@ -84,5 +83,4 @@ if __name__ == "__main__":
 
     print(f"Using Q to go from start to goal ({agent.goal})")
 
-    agent.walk()
-    make_movie(maze, feasibility, agent.path)
+    agent.walk(maze, feasibility)

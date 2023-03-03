@@ -3,7 +3,7 @@ from convert import find_reachable_neighbors
 import random
 
 
-def get_poss_next_states(state, F, n_states):
+def get_possible_next_states(state, F, n_states):
     # given a state s and a feasibility matrix F
     # get list of possible next states
     poss_next_states = []
@@ -13,9 +13,9 @@ def get_poss_next_states(state, F, n_states):
     return poss_next_states
 
 
-def get_rnd_next_state(state, F, n_states):
+def get_random_next_state(state, F, n_states):
     # Given a state, pick a feasible next state.
-    poss_next_states = get_poss_next_states(state, F, n_states)
+    poss_next_states = get_possible_next_states(state, F, n_states)
     next_state = poss_next_states[np.random.randint(0, len(poss_next_states))]
     return next_state
 
@@ -47,8 +47,8 @@ class Agent:
             curr_state = np.random.randint(0, self.n_states)  # random start state
 
             while True:
-                next_state = get_rnd_next_state(curr_state, F, self.n_states)
-                poss_next_next_states = get_poss_next_states(next_state, F, self.n_states)
+                next_state = get_random_next_state(curr_state, F, self.n_states)
+                poss_next_next_states = get_possible_next_states(next_state, F, self.n_states)
 
                 max_Q = -9999.99
                 for j in range(len(poss_next_next_states)):

@@ -6,3 +6,5 @@ files:
   visible: false
 - name: fw_lesson_view_dark.png
   visible: false
+- name: fw_lesson_view.png
+  visible: false

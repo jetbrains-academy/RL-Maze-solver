@@ -1,9 +1,9 @@
-To populate our Feasibility matrix with 0 and 1, we will first need to 
+To populate our `Feasibility` matrix with 0 and 1, we will first need to 
 write a function `find_reachable_neighbors` that accepts a maze and a cell in that maze and returns a list of neighbors:
 `Cell` objects that are accessible from the given cell
-(do not have a shared wall with it).
+(that is, do not have a shared wall with it).
 
-Complete the implementation of this function in convert.py.
+Complete the implementation of this function in `convert.py`.
 
 <div class="hint">
 

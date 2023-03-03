@@ -2,13 +2,13 @@ import numpy as np
 from convert import find_reachable_neighbors
 
 
-def get_poss_next_states(state, F, n_states):
+def get_possible_next_states(state, F, n_states):
     # given a state s and a feasibility matrix F
     # get list of possible next states
     pass
 
 
-def get_rnd_next_state(state, F, n_states):
+def get_random_next_state(state, F, n_states):
     # Given a state, pick a feasible next state.
     pass
 
@@ -28,6 +28,6 @@ class Agent:
         # Bellman's equation: Q = [(1 - alpha) * Q]  +  [alpha * (reward + (gamma * maxQ))]
         pass
 
-    def walk(self):
+    def walk(self, maze, feasibility):
         # Walk to the goal from start using the Q matrix.
         pass
