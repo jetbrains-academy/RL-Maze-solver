@@ -2,11 +2,18 @@ from cell import Cell
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-
 # Some predefined values for the visualization
 margin = 80
 cell_side = 100
 line_thickness = 10
+
+
+class PathNotFound(Exception):
+    """Exception raised when maze path is not found."""
+
+    def __init__(self, message="Maze path was not found, unable to draw a gif. Please try different parameters."):
+        self.message = message
+        super().__init__(self.message)
 
 
 def draw_cell(cell, image, color="black", count=0, wide=5, method="grid"):
@@ -70,7 +77,7 @@ def make_movie(maze, feasibility, path, filename="maze_path.gif"):
     width, height = (margin + cell_side * dim for dim in maze.maze_grid.shape)
 
     if 'break' in path:
-        return
+        raise PathNotFound
 
     for position in path:
         ind1 = np.where(feasibility.numbered_grid == position)[0][0]
