@@ -7,30 +7,24 @@ which moves you to the goal state.
 
 <img src="maze_example.png" width="300">
 
-You already predefined the R-matrix in the previous task. Now, you need to fill it with actual reward values.
+The R-matrix itself is already predefined (`Agent.R`). You need to fill it with actual reward values.
 No rewards are needed at the intersections of the cells that are not reachable from one another (keep the `0`s).
-Every move gets a -0.1 reward except for the last one – reaching the goal – which gets 1000.0. 
+Every possible move gets a -0.1 reward except for the last one – reaching the goal – which gets 1000.0. 
 Complete the method `set_rewards` so that it fills the `R` matrix according to the guidelines above.
 
 Do not forget to call the method in the `__init__`.
 
 <div class="hint">
 
-You can use `numpy.where` to replace `1`s in the template (remember that they are the places where cells are reachable from one another)
+You can use `numpy.where` to replace `1`s in the template (they are the places where cells are reachable from one another)
 with `-0.1`.
 </div>
 
 <div class="hint">
 
-You will probably need to figure out the number of the penultimate cell 
-and then set the value `R[number_of_penultimate_cell][number_of_goal_cell]` to `1000.0`.
+Set the reward of `1000.0` for the last move `R[number_of_penultimate_cell][number_of_goal_cell]`.
 </div>
 
-<div class="hint">
-
-You could use the function `find_reachable_neighbors` from the module convert.py to find the penultimate cell.
-Our maze-building algorithm works in such a way that there will always be only one cell reachable from the goal.
-</div>
 
 <style>
 img {
