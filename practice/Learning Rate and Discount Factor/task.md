@@ -3,10 +3,11 @@ the shortest number of steps. The core concept of RL is learning by interaction 
 Unlike supervised learning, correct labels for a series of actions are not known upfront and need to be learned.
 RL focuses on finding a balance between exploration (seeking future rewards) and exploitation 
 (using existing knowledge). You will experiment with a Q-learning algorithm that iteratively updates a Q-table, helping 
-the learning agent find the maze's shortest path.
+the learning agent find the shortest path in a maze.
 
 In Q-learning, the learning rate ($\alpha$) and discount factor ($\gamma$) influence the importance of future rewards. Optimal values 
-for these parameters depend on the maze size, and identifying the right combination is crucial for the algorithm's success. 
+for these parameters depend on the maze size, and they help achieve the optimal balance between exploration and exploitation to ensure 
+successful completion.
 The Q-table is updated using the following equation:
 
 $$Q(s_t,a_t)=[(1 - \alpha)*Q(s_t,a_t)]+[\alpha * (r_t + \gamma * maxQ(s_{t+1},a) \forall a)]$$
@@ -24,8 +25,6 @@ $$Q(s_t,a_t)=[(1 - \alpha)*Q(s_t,a_t)]+[\alpha * (r_t + \gamma * maxQ(s_{t+1},a)
 - $maxQ(s_{t+1},a)$ represents the maximum Q-value of the next state ($s_{t+1}$) over all possible actions $a$.
 </details>
 
-The learning rate and discount factor determine the balance between past information and future rewards. Adjusting these 
-parameters helps the algorithm achieve the optimal balance between exploration and exploitation.
 
 When running `final_run.py`, the program will ask for your input, generate a maze, and use the Q-learning algorithm to find the shortest path. 
 It will also create a gif of the agent moving through the maze, which you will be able to view in the next task. 
