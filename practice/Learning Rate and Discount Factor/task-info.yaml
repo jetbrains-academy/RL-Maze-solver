@@ -22,5 +22,3 @@ files:
   visible: false
 - name: runConfigurations/final_run.run.xml
   visible: false
-- name: maze.png
-  visible: true
