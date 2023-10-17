@@ -9,6 +9,10 @@ summary: "<p>This is an introductory Reinforcement Learning tutorial by JetBrain
   \ learn what kinds of problems such algorithms can be applied to and what limitations\
   \ they carry.</p> \n<p>The course includes building a dynamic visualization of the\
   \ agent moving through the maze.</p>\n"
+vendor:
+  name: JetBrains
+  email: support@jetbrains.com
+  url: https://www.jetbrains.com/
 programming_language: Python
 environment: unittest
 content:
