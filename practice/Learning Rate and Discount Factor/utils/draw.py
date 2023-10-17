@@ -1,4 +1,4 @@
-from cell import Cell
+from utils.cell import Cell
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 

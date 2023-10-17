@@ -1,5 +1,5 @@
 import numpy as np
-from cell import Cell
+from utils.cell import Cell
 
 
 def find_reachable_neighbors(maze_, cell_):

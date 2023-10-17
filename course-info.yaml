@@ -1,5 +1,5 @@
 type: marketplace
-title: Reinforcement Learning Maze Solver
+title: Demo of Reinforcement Learning Maze Solver
 language: English
 summary: "<p>This is an introductory Reinforcement Learning tutorial by JetBrains\
   \ Academy demonstrating the approach on a simple task of solving a labyrinth.</p>\
@@ -12,4 +12,4 @@ summary: "<p>This is an introductory Reinforcement Learning tutorial by JetBrain
 programming_language: Python
 environment: unittest
 content:
-- practice
+  - practice

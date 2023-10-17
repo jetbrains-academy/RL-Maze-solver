@@ -1,6 +1,6 @@
 import random
 import numpy as np
-from cell import Cell
+from utils.cell import Cell
 
 
 class Maze:

@@ -1,5 +1,5 @@
 import numpy as np
-from convert import find_reachable_neighbors
+from utils.convert import find_reachable_neighbors
 
 
 def get_possible_next_states(state, F, n_states):

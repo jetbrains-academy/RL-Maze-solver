@@ -1,8 +1,8 @@
-from maze import Maze
-from convert import Feasibility
-from learn import Agent
+from practice.GIF.utils.maze import Maze
+from practice.GIF.utils.convert import Feasibility
+from practice.GIF.utils.learn import Agent
 import pandas as pd
-from draw import make_movie
+from practice.GIF.utils.draw import make_movie
 
 
 def my_print(Q):
